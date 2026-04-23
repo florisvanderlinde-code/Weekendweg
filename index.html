@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Zwieneboer'n Weekend 2026</title>
-<meta name="description" content="Zwieneboer'n Weekend 2026 — 1 t/m 3 mei. Een weekend vol avontuur, pils en sterke verhalen.">
+<title>Zwieneboer'n Weekend 2026 — Heeg</title>
+<meta name="description" content="Zwieneboer'n Weekend 2026 — 1 t/m 3 mei in Heeg. Een weekend vol avontuur, pils en sterke verhalen.">
 <meta name="theme-color" content="#0a0c0f">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,11 +157,22 @@ a:hover { color: var(--accent-glow); }
 .hero-title .accent { color: var(--accent); }
 .hero-title .italic { font-style: italic; font-weight: 400; color: var(--text-secondary); }
 
+.hero-location {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent);
+  padding: 0.35rem 0.9rem; border-radius: 100px;
+  background: rgba(200,164,94,0.08); border: 1px solid var(--border-strong);
+  margin-bottom: 1.5rem; animation: fadeSlideUp 1s 0.7s both;
+}
+.hero-location::before { content: '📍'; font-size: 0.9rem; }
+
 .hero-subtitle {
   font-size: 1rem; color: var(--text-secondary); line-height: 1.7;
   max-width: 560px; margin: 0 auto 2.5rem;
   animation: fadeSlideUp 1s 0.8s both; padding: 0 0.5rem;
 }
+.hero-subtitle strong { color: var(--accent); font-weight: 600; }
 
 /* Countdown — Mobile */
 .countdown {
@@ -198,6 +209,7 @@ a:hover { color: var(--accent-glow); }
   .hero { padding: 2rem; }
   .hero-badge { font-size: 0.75rem; padding: 0.5rem 1.25rem; margin-bottom: 2rem; }
   .hero-date { font-size: 0.9rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
+  .hero-location { font-size: 0.8rem; letter-spacing: 0.15em; padding: 0.45rem 1.1rem; margin-bottom: 2rem; }
   .hero-subtitle { font-size: 1.15rem; margin-bottom: 3rem; }
   .countdown { gap: 1rem; max-width: none; }
   .countdown-block { padding: 1.25rem 1rem; border-radius: 16px; min-width: 90px; }
@@ -257,6 +269,7 @@ a:hover { color: var(--accent-glow); }
   font-weight: 700; line-height: 1.1; margin-bottom: 1rem;
 }
 .section-desc { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); max-width: 640px; margin-bottom: 2.5rem; }
+.section-desc strong { color: var(--accent); font-weight: 600; }
 .section-illus { display: none; }
 
 .divider { width: 100%; max-width: 1200px; margin: 0 auto; height: 1px; position: relative; background: linear-gradient(to right, transparent, var(--border-strong), transparent); }
@@ -283,25 +296,27 @@ a:hover { color: var(--accent-glow); }
 .locatie-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #0d100f 30%, #0d100f 70%, var(--bg-deep) 100%); }
 
 .locatie-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-.locatie-mystery {
+.locatie-reveal {
   padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
   position: relative; overflow: hidden;
 }
-.locatie-mystery::before {
+.locatie-reveal::before {
   content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle at center, rgba(200,164,94,0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at center, rgba(200,164,94,0.05) 0%, transparent 50%);
   animation: rotate-slow 20s linear infinite;
 }
 @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.locatie-mystery::after {
+.locatie-reveal::after {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(to right, var(--accent-dark), var(--accent), var(--accent-dark));
   border-radius: 20px 20px 0 0;
 }
-.locatie-mystery-content { position: relative; z-index: 1; }
-.locatie-mystery h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; }
-.locatie-mystery p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
-.locatie-mystery .hint {
+.locatie-reveal-content { position: relative; z-index: 1; }
+.locatie-reveal h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.75rem; }
+.locatie-reveal p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
+.locatie-reveal p strong { color: var(--text-primary); font-weight: 600; }
+.locatie-reveal p em { color: var(--text-muted); font-style: italic; }
+.locatie-reveal .hint {
   font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
   padding: 0.875rem 1.25rem; background: rgba(200,164,94,0.06);
   border: 1px dashed var(--border-strong); border-radius: 10px; margin-top: 1rem;
@@ -321,9 +336,9 @@ a:hover { color: var(--accent-glow); }
 
 @media (min-width: 769px) {
   .locatie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-  .locatie-mystery { padding: 3rem; border-radius: 24px; }
-  .locatie-mystery h3 { font-size: 1.5rem; }
-  .locatie-mystery .hint { font-size: 0.85rem; padding: 1rem 1.5rem; }
+  .locatie-reveal { padding: 3rem; border-radius: 24px; }
+  .locatie-reveal h3 { font-size: 1.5rem; }
+  .locatie-reveal .hint { font-size: 0.85rem; padding: 1rem 1.5rem; }
   .locatie-feature { padding: 1.5rem 2rem; border-radius: 16px; gap: 1.25rem; }
   .locatie-feature-icon { width: 48px; height: 48px; font-size: 1.4rem; }
   .locatie-feature h4 { font-size: 1rem; }
@@ -368,6 +383,24 @@ a:hover { color: var(--accent-glow); }
 .planning-item-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 .planning-item-text strong { color: var(--text-primary); font-weight: 600; }
 
+/* Highlighted planning item (check-in emphasis) */
+.planning-item-highlight {
+  background: linear-gradient(135deg, rgba(200,164,94,0.08), var(--bg-card));
+  border-color: var(--border-strong);
+  box-shadow: 0 0 20px rgba(200,164,94,0.06);
+}
+.planning-item-highlight::before {
+  width: 4px;
+  background: linear-gradient(to bottom, var(--accent-glow), var(--accent));
+}
+.planning-item-highlight .planning-item-time { color: var(--accent-glow); font-weight: 700; }
+.planning-item-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg-deep);
+  background: var(--accent); padding: 0.2rem 0.55rem; border-radius: 100px;
+  margin-left: 0.5rem; vertical-align: middle; font-weight: 700;
+}
+
 /* Desktop planning — restore timeline */
 @media (min-width: 769px) {
   .planning-timeline { gap: 0; position: relative; }
@@ -397,6 +430,7 @@ a:hover { color: var(--accent-glow); }
   }
   .planning-item-time { min-width: 60px; flex-shrink: 0; font-size: 0.8rem; }
   .planning-item-text { font-size: 0.95rem; }
+  .planning-item-tag { font-size: 0.6rem; padding: 0.25rem 0.65rem; }
 }
 
 /* ═══════════════════════════════════
@@ -409,6 +443,51 @@ a:hover { color: var(--accent-glow); }
 .hof-intro .section-label::before { display: none; }
 .hof-intro .section-title { margin-left: auto; margin-right: auto; }
 .hof-intro .section-desc { margin-left: auto; margin-right: auto; }
+
+/* Dinner points CTA */
+.dinner-cta {
+  padding: 1.75rem;
+  background: linear-gradient(135deg, rgba(200,164,94,0.1), rgba(200,164,94,0.03));
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  position: relative; overflow: hidden;
+  box-shadow: 0 0 40px rgba(200,164,94,0.08);
+}
+.dinner-cta::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--accent-glow), transparent);
+}
+.dinner-cta::after {
+  content: ''; position: absolute; top: -40%; right: -20%; width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(200,164,94,0.12), transparent 60%);
+  pointer-events: none;
+}
+.dinner-cta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+.dinner-cta-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(200,164,94,0.15); border: 1px solid var(--border-strong);
+  display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+}
+.dinner-cta-label {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem;
+}
+.dinner-cta-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(--text-primary); }
+.dinner-cta p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.6rem; position: relative; z-index: 1; }
+.dinner-cta p:last-child { margin-bottom: 0; }
+.dinner-cta p strong { color: var(--text-primary); font-weight: 600; }
+.dinner-cta p em { color: var(--accent); font-style: italic; }
+.dinner-cta-points { color: var(--accent) !important; font-family: var(--font-mono); font-weight: 700 !important; }
+
+@media (min-width: 769px) {
+  .dinner-cta { padding: 2.25rem 2.5rem; border-radius: 24px; margin-bottom: 3rem; }
+  .dinner-cta-header { gap: 1.25rem; margin-bottom: 1.25rem; }
+  .dinner-cta-icon { width: 56px; height: 56px; font-size: 1.6rem; }
+  .dinner-cta-label { font-size: 0.7rem; letter-spacing: 0.15em; }
+  .dinner-cta-title { font-size: 1.4rem; }
+  .dinner-cta p { font-size: 0.95rem; }
+}
 
 /* Podium — mobile: horizontal cards */
 .hof-podium {
@@ -511,16 +590,17 @@ a:hover { color: var(--accent-glow); }
 }
 
 /* ═══════════════════════════════════
-   YOUTUBE LINK
+   YOUTUBE / AIRBNB LINK
    ═══════════════════════════════════ */
 .yt-link {
   display: flex; align-items: center; gap: 1rem;
-  margin-top: 1.5rem; padding: 1rem 1.25rem;
+  margin-top: 0.75rem; padding: 1rem 1.25rem;
   background: rgba(200,164,94,0.06); border: 1px solid var(--border-strong);
   border-radius: 12px; text-decoration: none;
   transition: background 0.3s, border-color 0.3s, transform 0.3s;
   -webkit-tap-highlight-color: transparent;
 }
+.yt-link:first-of-type { margin-top: 1.5rem; }
 .yt-link:hover, .yt-link:active {
   background: rgba(200,164,94,0.12); border-color: var(--accent);
   transform: translateY(-2px);
@@ -627,7 +707,8 @@ a:hover { color: var(--accent-glow); }
     <div class="hero-badge">Editie 2026 &middot; 1 t/m 3 mei</div>
     <div class="hero-date">01 &middot; 05 &middot; 2026 &nbsp;&mdash;&nbsp; 03 &middot; 05 &middot; 2026</div>
     <h1 class="hero-title">Zwieneboer<span class="accent">'n</span><br><span class="italic">Weekend</span></h1>
-    <p class="hero-subtitle">Een weekend vol avontuur, pils en sterke verhalen. De bestemming is nog een geheim, maar de koelkast staat koud. Tot dan!</p>
+    <div class="hero-location">Heeg · Friesland</div>
+    <p class="hero-subtitle">Een weekend vol avontuur, pils en sterke verhalen. Dit jaar zetten we koers naar <strong>Heeg</strong> — midden in de Friese meren. De koelkast staat koud. Tot dan!</p>
     <div class="countdown" id="countdown">
       <div class="countdown-block"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Dagen</div></div>
       <div class="countdown-block"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Uren</div></div>
@@ -658,11 +739,11 @@ a:hover { color: var(--accent-glow); }
 </div>
 
 <div class="notice-banner reveal">
-  <div class="notice-banner-inner" style="border-left-color: var(--accent);">
-    <span class="notice-icon">🏆</span>
+  <div class="notice-banner-inner" style="border-left-color: var(--accent-glow);">
+    <span class="notice-icon">🕓</span>
     <div class="notice-text">
-      <strong>Punten verdienen</strong>
-      <p>Er zijn binnenkort weer punten te verdienen via de website</p>
+      <strong>Inchecken vanaf 16:00 — vrijdag 1 mei 2026</strong>
+      <p>Eerder aankomen bij de villa in Heeg heeft geen zin: inchecken kan pas vanaf 16:00. Plan je reis daarop en zorg dat je op tijd bent voor de eerste pils.</p>
     </div>
   </div>
 </div>
@@ -673,24 +754,31 @@ a:hover { color: var(--accent-glow); }
   <div class="section-blob" style="width:300px;height:300px;background:rgba(200,164,94,0.3);bottom:-15%;right:-10%"></div>
   <div class="divider"><div class="divider-icon">📍</div></div>
   <section class="section" id="locatie">
-    <svg class="section-illus" width="300" height="300" viewBox="0 0 300 300" fill="none"><circle cx="150" cy="130" r="80" stroke="var(--accent)" stroke-width="1.5"/><path d="M150 50 L150 30 M150 210 L150 230 M70 130 L50 130 M230 130 L250 130" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="130" r="5" fill="var(--accent)"/><path d="M150 50 L160 130 L150 210 L140 130Z" fill="var(--accent)" fill-opacity=".15" stroke="var(--accent)" stroke-width=".5"/><text x="150" y="270" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">BESTEMMING</text><text x="150" y="285" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">ONBEKEND</text></svg>
+    <svg class="section-illus" width="300" height="300" viewBox="0 0 300 300" fill="none"><circle cx="150" cy="130" r="80" stroke="var(--accent)" stroke-width="1.5"/><path d="M150 50 L150 30 M150 210 L150 230 M70 130 L50 130 M230 130 L250 130" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="130" r="5" fill="var(--accent)"/><path d="M150 50 L160 130 L150 210 L140 130Z" fill="var(--accent)" fill-opacity=".15" stroke="var(--accent)" stroke-width=".5"/><text x="150" y="270" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">HEEG</text><text x="150" y="285" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">FRIESLAND</text></svg>
     <div class="reveal">
       <div class="section-label">01 &mdash; De Bestemming</div>
       <h2 class="section-title">De locatie</h2>
-      <p class="section-desc">De bestemming is nog geheim. Wat we wel kunnen zeggen: het wordt goed. Hieronder de nog een aanwijzing...</p>
+      <p class="section-desc">De aanwijzingen zijn gekraakt: dit jaar strijken we neer in <strong>Heeg</strong>, een idyllisch Fries dorp aan het Heegermeer. Zeilboten, water tot aan de horizon, en een complete villa voor ons gereserveerd.</p>
     </div>
     <div class="locatie-grid">
-      <div class="locatie-mystery reveal reveal-delay-1">
-        <div class="locatie-mystery-content">
-          <h3>🔎 De aanwijzing</h3>
-          <p>We gaan dit weekend naar een dorp waar het water nooit ver weg is. Hier draait alles om boaten, geen moaterboaten maar zeilboaten.</p>
-          <p>Aangezien zeilen veel moeite kost, bestaat er een kans dat we met een moaterboat op pad kunnen. Eem kijken of het weer geschikt is.</p>
-          <p>Zoals Hein Mighelbrink van The Spitfires ooit zei: ''Op het water, in de sloot met een moaterboat''</p>
-          <div class="hint">💡 De vraag is: weten jullie nu onze bestemming?</div>
+      <div class="locatie-reveal reveal reveal-delay-1">
+        <div class="locatie-reveal-content">
+          <h3>🎉 Onthuld: we gaan naar Heeg</h3>
+          <p>De bestemming is geen geheim meer. Dit jaar strijken we neer in <strong>Heeg</strong>, een prachtig dorp aan het Heegermeer in het hart van Friesland. Zeilboten zover je kunt kijken — en als het weer meezit regelen we zondag nog een moaterboat.</p>
+          <p>Onze uitvalsbasis: een volledig ingerichte <strong>villa aan het water</strong>, op loopafstand van het centrum van Heeg. Alles onder één dak, zodat we ongestoord onze gang kunnen gaan.</p>
+          <p>En zoals Hein Mighelbrink van The Spitfires ooit zei: <em>"Op het water, in de sloot met een moaterboat."</em> Toepasselijker kon het niet.</p>
+          <div class="hint">🏡 Bekijk hieronder de villa waar we verblijven.</div>
+          <a href="https://www.airbnb.nl/rooms/41489826" target="_blank" rel="noopener" class="yt-link">
+            <span class="yt-link-play">🏠</span>
+            <span class="yt-link-text">
+              <strong>Onze villa in Heeg</strong>
+              <span>Bekijk op Airbnb →</span>
+            </span>
+          </a>
           <a href="https://www.youtube.com/watch?v=rYMbSvDJk5g&t=66s" target="_blank" rel="noopener" class="yt-link">
             <span class="yt-link-play">▶</span>
             <span class="yt-link-text">
-              <strong>Luister: The Spitfires</strong>
+              <strong>The Spitfires — thema-song</strong>
               <span>Bekijk op YouTube →</span>
             </span>
           </a>
@@ -698,8 +786,8 @@ a:hover { color: var(--accent-glow); }
       </div>
       <div class="locatie-features reveal reveal-delay-2">
         <div class="locatie-feature"><div class="locatie-feature-icon">🏡</div><div><h4>Prachtige villa</h4><p>Volledig uitgerust, alle comfort aanwezig</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">👥</div><div><h4>Vriendenweekend</h4><p>Jaarlijkse traditie</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">🚗</div><div><h4>&lt; 1,5 uur rijden</h4><p>Kop alweer op huus an stoan</p></div></div>
+        <div class="locatie-feature"><div class="locatie-feature-icon">⛵</div><div><h4>Aan het Heegermeer</h4><p>Water en zeilboten binnen handbereik</p></div></div>
+        <div class="locatie-feature"><div class="locatie-feature-icon">🚗</div><div><h4>~1 uur rijden</h4><p>Kop alweer op huus an stoan</p></div></div>
         <div class="locatie-feature"><div class="locatie-feature-icon">🍺</div><div><h4>Koelkast staat koud</h4><p>Pils ofsoat</p></div></div>
         <div class="locatie-feature"><div class="locatie-feature-icon">🤫</div><div><h4>Rustige omgeving</h4><p>Bek hol'n saams</p></div></div>
       </div>
@@ -717,7 +805,7 @@ a:hover { color: var(--accent-glow); }
     <div class="reveal">
       <div class="section-label">02 &mdash; Het Programma</div>
       <h2 class="section-title">Planning</h2>
-      <p class="section-desc">We verblijven drie dagen op onze bestemming, van vrijdagmiddag tot zondagochtend. Hieronder wat ik tot nu toe kan delen: de rest blijft nog even geheim. Mocht het mooi weer zijn kan er misschien nog een boat gehuurd worden zondagmiddag.</p>
+      <p class="section-desc">We verblijven drie dagen in Heeg, van vrijdagmiddag tot zondagochtend. Inchecken kan vanaf <strong>16:00 op vrijdag 1 mei</strong>. Hieronder wat ik tot nu toe kan delen — de rest blijft nog even geheim. Als het weer meezit, proberen we zondagmiddag nog een boot te regelen.</p>
     </div>
     <div class="planning-timeline">
       <div class="planning-day reveal">
@@ -729,8 +817,8 @@ a:hover { color: var(--accent-glow); }
           </div>
         </div>
         <div class="planning-items">
-          <div class="planning-item"><div class="planning-item-time">16:00</div><div class="planning-item-text"><strong>Aankomst</strong> — Villa en omgeving verkennen, kamers verdelen, eerste pils opentrekken</div></div>
-          <div class="planning-item"><div class="planning-item-time">18:00</div><div class="planning-item-text"><strong>Avondeten</strong> — Samen eten in de villa</div></div>
+          <div class="planning-item planning-item-highlight"><div class="planning-item-time">Vanaf 16:00 <span class="planning-item-tag">Inchecken</span></div><div class="planning-item-text"><strong>Inchecken bij de villa in Heeg</strong> — Niet eerder dan 16:00 aankomen. Kamers verdelen, omgeving verkennen en de eerste pils opentrekken.</div></div>
+          <div class="planning-item"><div class="planning-item-time">18:00</div><div class="planning-item-text"><strong>Avondeten</strong> — Samen eten in de villa (verzorgd door de vrijwilligers, zie scorebord 👇)</div></div>
           <div class="planning-item"><div class="planning-item-time">20:00</div><div class="planning-item-text"><strong>Avondprogramma</strong> — Pils en de eerste punten op het spel.</div></div>
         </div>
       </div>
@@ -744,7 +832,7 @@ a:hover { color: var(--accent-glow); }
         </div>
         <div class="planning-items">
           <div class="planning-item"><div class="planning-item-time">13:30</div><div class="planning-item-text"><strong>Vertrek vanuit de villa</strong> — Onderweg naar de middagactiviteit, circa een half uurtje rijden</div></div>
-          <div class="planning-item"><div class="planning-item-time">14:00</div><div class="planning-item-text"><strong>Activiteit</strong> — Wordt nog onthuld. Handig: Neem een zonnebril mee.</div></div>
+          <div class="planning-item"><div class="planning-item-time">14:00</div><div class="planning-item-text"><strong>Activiteit</strong> — Wordt nog onthuld. Handig: neem een zonnebril mee.</div></div>
           <div class="planning-item"><div class="planning-item-time">19:30</div><div class="planning-item-text"><strong>Diner</strong> — Reservering bij een restaurant in een nabijgelegen stad</div></div>
           <div class="planning-item"><div class="planning-item-time">22:00</div><div class="planning-item-text"><strong>Kroeg</strong> — Pils nuttigen in een of andere stink kroeg</div></div>
         </div>
@@ -776,6 +864,20 @@ a:hover { color: var(--accent-glow); }
       <h2 class="section-title">Hall of Fame</h2>
       <p class="section-desc">Dit jaar voor het eerst een scorebord. De onderste twee op het scorebord? Die moeten volgend jaar het Zwieneboer'n Weekend organiseren. Voor en tijdens het weekend zijn punten te verdienen.</p>
     </div>
+
+    <!-- DINNER POINTS CTA -->
+    <div class="dinner-cta reveal">
+      <div class="dinner-cta-header">
+        <div class="dinner-cta-icon">🍽️</div>
+        <div>
+          <div class="dinner-cta-label">Extra punten · Snelle beslissers</div>
+          <h3 class="dinner-cta-title">2× <span class="dinner-cta-points">5 punten</span> voor het avondeten op vrijdag</h3>
+        </div>
+      </div>
+      <p>De <strong>eerste twee vrijwilligers</strong> die het avondeten op <strong>vrijdag 1 mei</strong> verzorgen, krijgen ieder <strong class="dinner-cta-points">5 punten</strong> op het scorebord. Dat is geen kleinigheid — met 5 punten erbij loop je in één klap flink uit op de rest van de concurrentie.</p>
+      <p>Melden doe je in de <strong>Zwienboer en Zwieneboerinnen</strong> app-groep. <em>Wie het eerst komt, wie het eerst maalt.</em></p>
+    </div>
+
     <div class="hof-podium reveal">
       <!-- Mobile order: gold first, then silver, bronze -->
       <div class="hof-podium-item gold"><div class="hof-rank">1</div><div class="hof-podium-info"><div class="hof-name">Deuin</div><div class="hof-score">2 punten</div></div></div>
@@ -811,7 +913,7 @@ a:hover { color: var(--accent-glow); }
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo">Zwieneboer<span>'n</span> Weekend</div>
-  <p class="footer-text">1 t/m 3 mei 2026 &middot; Bestemming onbekend &middot; 10 vrienden &middot; 1 weekend<br><span style="opacity:.5;margin-top:.5rem;display:inline-block">Wat in de villa gebeurt, blijft in de villa.</span></p>
+  <p class="footer-text">1 t/m 3 mei 2026 &middot; Heeg, Friesland &middot; 10 vrienden &middot; 1 weekend<br><span style="opacity:.5;margin-top:.5rem;display:inline-block">Wat in de villa gebeurt, blijft in de villa.</span></p>
 </footer>
 
 <script>
