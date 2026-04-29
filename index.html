@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Zwieneboer'n Weekend 2026 — Heeg</title>
 <meta name="description" content="Zwieneboer'n Weekend 2026 — 1 t/m 3 mei in Heeg. Een weekend vol avontuur, pils en sterke verhalen.">
-<meta name="theme-color" content="#0a0c0f">
+<meta name="theme-color" content="#0d1015">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,20 +14,22 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg-deep: #0a0c0f;
-  --bg-card: #12151a;
-  --bg-card-hover: #181c23;
-  --text-primary: #f0ece4;
-  --text-secondary: #9a9590;
-  --text-muted: #5c5752;
-  --accent: #c8a45e;
-  --accent-glow: #e8c96e;
+  /* Iets lichtere basis voor meer contrast met de cards */
+  --bg-deep: #0d1015;
+  --bg-card: #181c23;
+  --bg-card-hover: #1f242c;
+  --bg-card-elevated: #20252e;
+  --text-primary: #f3efe7;
+  --text-secondary: #a8a39c;
+  --text-muted: #6a655f;
+  --accent: #d4ae66;
+  --accent-glow: #f0d27a;
   --accent-dark: #8a6f3a;
   --green: #5a9a6a;
-  --red: #b85450;
+  --red: #c75a55;
   --blue: #4a7a9a;
-  --border: rgba(200,164,94,0.12);
-  --border-strong: rgba(200,164,94,0.25);
+  --border: rgba(212,174,102,0.15);
+  --border-strong: rgba(212,174,102,0.3);
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
   --font-mono: 'Space Mono', monospace;
@@ -51,19 +53,19 @@ a:hover { color: var(--accent-glow); }
   padding: 0 1.25rem; padding-top: var(--safe-top);
   height: calc(60px + var(--safe-top));
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(10,12,15,0.7);
+  background: rgba(13,16,21,0.7);
   backdrop-filter: blur(24px) saturate(1.4);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   transition: background 0.4s, box-shadow 0.4s;
 }
-.nav.scrolled { background: rgba(10,12,15,0.92); box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
+.nav.scrolled { background: rgba(13,16,21,0.92); box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
 .nav-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text-primary); }
 .nav-logo span { color: var(--accent); }
 
-.nav-links { display: none; gap: 2rem; list-style: none; }
+.nav-links { display: none; gap: 1.75rem; list-style: none; }
 .nav-links a {
-  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-secondary); position: relative; padding: 0.25rem 0; transition: color 0.3s;
 }
 .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s ease; }
@@ -82,12 +84,12 @@ a:hover { color: var(--accent-glow); }
 
 .nav-mobile {
   display: none; position: fixed; inset: 0;
-  background: rgba(10,12,15,0.97); backdrop-filter: blur(40px);
-  z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+  background: rgba(13,16,21,0.97); backdrop-filter: blur(40px);
+  z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem;
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
-  font-family: var(--font-display); font-size: 1.75rem; color: var(--text-primary);
+  font-family: var(--font-display); font-size: 1.65rem; color: var(--text-primary);
   opacity: 0.7; transition: opacity 0.3s; padding: 0.5rem 1rem;
   -webkit-tap-highlight-color: transparent;
 }
@@ -114,9 +116,9 @@ a:hover { color: var(--accent-glow); }
 .hero-bg::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,164,94,0.1) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(90,154,106,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(74,122,154,0.05) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,174,102,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(90,154,106,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(74,122,154,0.06) 0%, transparent 50%);
 }
 .hero-bg::after {
   content: ''; position: absolute; inset: 0;
@@ -124,7 +126,7 @@ a:hover { color: var(--accent-glow); }
   opacity: 0.4;
 }
 
-.hero-deco { position: absolute; z-index: 0; opacity: 0.04; pointer-events: none; }
+.hero-deco { position: absolute; z-index: 0; opacity: 0.05; pointer-events: none; }
 .hero-deco-left { left: -20%; top: 10%; width: 300px; height: 300px; animation: float-deco 12s ease-in-out infinite; }
 .hero-deco-right { right: -20%; bottom: 5%; width: 280px; height: 280px; animation: float-deco 15s ease-in-out infinite reverse; }
 @keyframes float-deco { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(3deg); } }
@@ -140,8 +142,9 @@ a:hover { color: var(--accent-glow); }
   padding: 0.4rem 1rem; border: 1px solid var(--border-strong); border-radius: 100px;
   font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 1.5rem; animation: fadeSlideUp 1s 0.2s both;
+  background: rgba(212,174,102,0.05);
 }
-.hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: pulse-dot 2s infinite; flex-shrink: 0; }
+.hero-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: pulse-dot 2s infinite; flex-shrink: 0; box-shadow: 0 0 8px var(--accent); }
 @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
 
 .hero-date {
@@ -154,7 +157,7 @@ a:hover { color: var(--accent-glow); }
   font-weight: 900; line-height: 0.95; letter-spacing: -0.02em;
   margin-bottom: 1.25rem; animation: fadeSlideUp 1s 0.6s both;
 }
-.hero-title .accent { color: var(--accent); }
+.hero-title .accent { color: var(--accent); text-shadow: 0 0 40px rgba(212,174,102,0.3); }
 .hero-title .italic { font-style: italic; font-weight: 400; color: var(--text-secondary); }
 
 .hero-location {
@@ -162,7 +165,7 @@ a:hover { color: var(--accent-glow); }
   font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--accent);
   padding: 0.35rem 0.9rem; border-radius: 100px;
-  background: rgba(200,164,94,0.08); border: 1px solid var(--border-strong);
+  background: rgba(212,174,102,0.1); border: 1px solid var(--border-strong);
   margin-bottom: 1.5rem; animation: fadeSlideUp 1s 0.7s both;
 }
 .hero-location::before { content: '📍'; font-size: 0.9rem; }
@@ -182,13 +185,13 @@ a:hover { color: var(--accent-glow); }
 .countdown-block {
   display: flex; flex-direction: column; align-items: center;
   padding: 0.75rem 0.25rem;
-  background: linear-gradient(135deg, var(--bg-card), rgba(200,164,94,0.04));
+  background: linear-gradient(135deg, var(--bg-card), rgba(212,174,102,0.05));
   border: 1px solid var(--border); border-radius: 12px;
   position: relative; overflow: hidden;
 }
 .countdown-block::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(to right, transparent, var(--accent), transparent); opacity: 0.5;
+  background: linear-gradient(to right, transparent, var(--accent), transparent); opacity: 0.6;
 }
 .countdown-number { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
 .countdown-label { font-size: 0.55rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.35rem; }
@@ -230,14 +233,15 @@ a:hover { color: var(--accent-glow); }
   padding: 0 1.25rem; position: relative; z-index: 2;
 }
 .stat-card {
-  background: linear-gradient(135deg, var(--bg-card), rgba(200,164,94,0.03));
+  background: linear-gradient(135deg, var(--bg-card), rgba(212,174,102,0.04));
   border: 1px solid var(--border); border-radius: 16px;
   padding: 1.25rem 1rem; text-align: center;
   position: relative; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .stat-card::before {
   content: ''; position: absolute; top: 0; left: 20%; right: 20%; height: 2px;
-  background: linear-gradient(to right, transparent, var(--accent), transparent); opacity: 0.4;
+  background: linear-gradient(to right, transparent, var(--accent), transparent); opacity: 0.5;
 }
 .stat-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
 .stat-number { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: var(--accent); line-height: 1; }
@@ -255,7 +259,7 @@ a:hover { color: var(--accent-glow); }
    SECTION COMMONS
    ═══════════════════════════════════ */
 .section-wrap { position: relative; overflow: hidden; }
-.section-wrap .section-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.06; pointer-events: none; z-index: 0; }
+.section-wrap .section-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.07; pointer-events: none; z-index: 0; }
 .section {
   padding: 4rem 1.25rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
 }
@@ -286,23 +290,24 @@ a:hover { color: var(--accent-glow); }
   .section-label::before { width: 40px; }
   .section-title { margin-bottom: 1.5rem; }
   .section-desc { font-size: 1.05rem; margin-bottom: 3rem; }
-  .section-illus { display: block; position: absolute; right: 2rem; top: 6rem; opacity: 0.04; z-index: 0; pointer-events: none; }
+  .section-illus { display: block; position: absolute; right: 2rem; top: 6rem; opacity: 0.05; z-index: 0; pointer-events: none; }
   .divider-icon { width: 44px; height: 44px; font-size: 1.1rem; }
 }
 
 /* ═══════════════════════════════════
    LOCATIE
    ═══════════════════════════════════ */
-.locatie-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #0d100f 30%, #0d100f 70%, var(--bg-deep) 100%); }
+.locatie-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #11140f 30%, #11140f 70%, var(--bg-deep) 100%); }
 
 .locatie-grid { display: flex; flex-direction: column; gap: 1.5rem; }
 .locatie-reveal {
   padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
   position: relative; overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 .locatie-reveal::before {
   content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
-  background: radial-gradient(circle at center, rgba(200,164,94,0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at center, rgba(212,174,102,0.06) 0%, transparent 50%);
   animation: rotate-slow 20s linear infinite;
 }
 @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -318,7 +323,7 @@ a:hover { color: var(--accent-glow); }
 .locatie-reveal p em { color: var(--text-muted); font-style: italic; }
 .locatie-reveal .hint {
   font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
-  padding: 0.875rem 1.25rem; background: rgba(200,164,94,0.06);
+  padding: 0.875rem 1.25rem; background: rgba(212,174,102,0.07);
   border: 1px dashed var(--border-strong); border-radius: 10px; margin-top: 1rem;
 }
 
@@ -326,9 +331,11 @@ a:hover { color: var(--accent-glow); }
 .locatie-feature {
   padding: 1.25rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 14px; display: flex; align-items: center; gap: 1rem;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
 }
+.locatie-feature:hover { background: var(--bg-card-hover); border-color: var(--border-strong); transform: translateX(4px); }
 .locatie-feature-icon {
-  width: 44px; height: 44px; border-radius: 10px; background: rgba(200,164,94,0.08);
+  width: 44px; height: 44px; border-radius: 10px; background: rgba(212,174,102,0.1);
   display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
 }
 .locatie-feature h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
@@ -346,9 +353,9 @@ a:hover { color: var(--accent-glow); }
 }
 
 /* ═══════════════════════════════════
-   PLANNING — Full mobile redesign
+   PLANNING
    ═══════════════════════════════════ */
-.planning-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #0f0e12 30%, #0f0e12 70%, var(--bg-deep) 100%); }
+.planning-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #131217 30%, #131217 70%, var(--bg-deep) 100%); }
 
 .planning-timeline { display: flex; flex-direction: column; gap: 2.5rem; }
 
@@ -358,7 +365,7 @@ a:hover { color: var(--accent-glow); }
 .planning-day-badge {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 12px;
-  background: rgba(200,164,94,0.08); border: 1px solid var(--border-strong);
+  background: rgba(212,174,102,0.1); border: 1px solid var(--border-strong);
   font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; color: var(--accent);
   flex-shrink: 0;
 }
@@ -383,11 +390,10 @@ a:hover { color: var(--accent-glow); }
 .planning-item-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 .planning-item-text strong { color: var(--text-primary); font-weight: 600; }
 
-/* Highlighted planning item (check-in emphasis) */
 .planning-item-highlight {
-  background: linear-gradient(135deg, rgba(200,164,94,0.08), var(--bg-card));
+  background: linear-gradient(135deg, rgba(212,174,102,0.1), var(--bg-card));
   border-color: var(--border-strong);
-  box-shadow: 0 0 20px rgba(200,164,94,0.06);
+  box-shadow: 0 0 20px rgba(212,174,102,0.08);
 }
 .planning-item-highlight::before {
   width: 4px;
@@ -401,7 +407,7 @@ a:hover { color: var(--accent-glow); }
   margin-left: 0.5rem; vertical-align: middle; font-weight: 700;
 }
 
-/* Desktop planning — restore timeline */
+/* Desktop planning */
 @media (min-width: 769px) {
   .planning-timeline { gap: 0; position: relative; }
   .planning-timeline::before {
@@ -417,7 +423,7 @@ a:hover { color: var(--accent-glow); }
   .planning-day-badge::after {
     content: ''; width: 14px; height: 14px; border-radius: 50%;
     border: 2px solid var(--accent); background: var(--bg-deep);
-    box-shadow: 0 0 12px rgba(200,164,94,0.3);
+    box-shadow: 0 0 12px rgba(212,174,102,0.4);
     position: absolute; left: 134px;
   }
   .planning-day-info { }
@@ -434,9 +440,250 @@ a:hover { color: var(--accent-glow); }
 }
 
 /* ═══════════════════════════════════
+   PUNTEN — NIEUWE SECTIE
+   ═══════════════════════════════════ */
+.punten-wrap {
+  background: linear-gradient(180deg, var(--bg-deep) 0%, #14110d 25%, #181410 50%, #14110d 75%, var(--bg-deep) 100%);
+  position: relative;
+}
+
+.punten-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.punten-card {
+  position: relative;
+  background: linear-gradient(140deg, var(--bg-card-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.punten-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,174,102,0.08);
+}
+
+.punten-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.7;
+}
+
+/* Decoratieve grote letter achtergrond */
+.punten-card-bignum {
+  position: absolute;
+  top: -1rem; right: -0.5rem;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--accent);
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.punten-card-header {
+  display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;
+  position: relative; z-index: 1;
+}
+.punten-card-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(212,174,102,0.15), rgba(212,174,102,0.05));
+  border: 1px solid var(--border-strong);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(212,174,102,0.1);
+}
+.punten-card-tag {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem;
+}
+.punten-card-title {
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+  line-height: 1.2; color: var(--text-primary);
+}
+
+.punten-card-body {
+  position: relative; z-index: 1;
+  font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.punten-card-body strong { color: var(--text-primary); font-weight: 600; }
+.punten-card-body em { color: var(--accent); font-style: italic; }
+
+/* Podium voor punten per plek */
+.punten-podium {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  position: relative; z-index: 1;
+}
+.punten-podium-spot {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0.85rem 0.5rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.punten-podium-spot.gold {
+  background: linear-gradient(135deg, rgba(212,174,102,0.18), rgba(212,174,102,0.04));
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(212,174,102,0.15);
+}
+.punten-podium-spot.silver {
+  background: linear-gradient(135deg, rgba(176,176,176,0.1), rgba(176,176,176,0.02));
+  border-color: rgba(176,176,176,0.3);
+}
+.punten-podium-spot.bronze {
+  background: linear-gradient(135deg, rgba(160,120,90,0.1), rgba(160,120,90,0.02));
+  border-color: rgba(160,120,90,0.3);
+}
+.punten-podium-place {
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 0.25rem;
+}
+.punten-podium-spot.gold .punten-podium-place { color: var(--accent); }
+.punten-podium-points {
+  font-family: var(--font-display); font-size: 1.6rem; font-weight: 900;
+  color: var(--text-primary); line-height: 1;
+}
+.punten-podium-spot.gold .punten-podium-points { color: var(--accent); text-shadow: 0 0 12px rgba(212,174,102,0.4); }
+.punten-podium-label {
+  font-size: 0.6rem; color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Single-prize variant: één grote prijs ipv podium */
+.punten-prize-single {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(212,174,102,0.15), rgba(212,174,102,0.04));
+  border: 1px solid var(--accent);
+  position: relative; z-index: 1;
+  box-shadow: 0 0 20px rgba(212,174,102,0.1);
+}
+.punten-prize-single-num {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 900;
+  color: var(--accent); line-height: 1;
+  text-shadow: 0 0 15px rgba(212,174,102,0.4);
+}
+.punten-prize-single-text {
+  display: flex; flex-direction: column; gap: 0.15rem;
+}
+.punten-prize-single-text strong {
+  font-family: var(--font-display); font-size: 0.95rem; color: var(--text-primary);
+}
+.punten-prize-single-text span {
+  font-size: 0.75rem; color: var(--text-muted);
+}
+
+/* Mystery card — voor "meer punten te halen" */
+.punten-mystery {
+  position: relative;
+  background: linear-gradient(135deg, rgba(212,174,102,0.06), rgba(20,17,13,0.8));
+  border: 1px dashed var(--border-strong);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  text-align: center;
+  overflow: hidden;
+}
+.punten-mystery::before {
+  content: '?';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 18rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--accent);
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+}
+.punten-mystery-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(212,174,102,0.1);
+  border: 1px solid var(--border-strong);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  position: relative; z-index: 1;
+  animation: pulse-mystery 3s ease-in-out infinite;
+}
+@keyframes pulse-mystery {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,174,102,0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(212,174,102,0); }
+}
+.punten-mystery-tag {
+  font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+  position: relative; z-index: 1;
+}
+.punten-mystery h3 {
+  font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+  margin-bottom: 0.75rem; position: relative; z-index: 1;
+}
+.punten-mystery p {
+  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;
+  max-width: 480px; margin: 0 auto;
+  position: relative; z-index: 1;
+}
+.punten-mystery p strong { color: var(--accent); font-weight: 600; }
+
+/* Desktop overrides voor Punten */
+@media (min-width: 769px) {
+  .punten-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .punten-card { padding: 2.25rem 2rem; border-radius: 24px; }
+  .punten-card-bignum { font-size: 12rem; top: -1.5rem; right: -1rem; }
+  .punten-card-icon { width: 60px; height: 60px; font-size: 1.75rem; border-radius: 16px; }
+  .punten-card-tag { font-size: 0.7rem; letter-spacing: 0.15em; }
+  .punten-card-title { font-size: 1.5rem; }
+  .punten-card-body { font-size: 0.98rem; margin-bottom: 1.5rem; }
+  .punten-podium { gap: 0.75rem; }
+  .punten-podium-spot { padding: 1.1rem 0.75rem; border-radius: 12px; }
+  .punten-podium-place { font-size: 0.65rem; }
+  .punten-podium-points { font-size: 2rem; }
+  .punten-podium-label { font-size: 0.65rem; }
+  .punten-prize-single { padding: 1.25rem 1.5rem; gap: 1.25rem; border-radius: 14px; }
+  .punten-prize-single-num { font-size: 3rem; }
+  .punten-prize-single-text strong { font-size: 1.05rem; }
+  .punten-prize-single-text span { font-size: 0.8rem; }
+
+  .punten-mystery { padding: 2.75rem; border-radius: 24px; }
+  .punten-mystery::before { font-size: 24rem; }
+  .punten-mystery-icon { width: 64px; height: 64px; font-size: 1.8rem; margin-bottom: 1.25rem; }
+  .punten-mystery-tag { font-size: 0.75rem; }
+  .punten-mystery h3 { font-size: 1.65rem; }
+  .punten-mystery p { font-size: 0.95rem; }
+}
+
+/* ═══════════════════════════════════
    HALL OF FAME
    ═══════════════════════════════════ */
-.hof-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #0c0f0e 30%, #0c0f0e 70%, var(--bg-deep) 100%); }
+.hof-wrap { background: linear-gradient(180deg, var(--bg-deep) 0%, #0f1311 30%, #0f1311 70%, var(--bg-deep) 100%); }
 
 .hof-intro { text-align: center; margin-bottom: 2.5rem; }
 .hof-intro .section-label { justify-content: center; }
@@ -444,15 +691,14 @@ a:hover { color: var(--accent-glow); }
 .hof-intro .section-title { margin-left: auto; margin-right: auto; }
 .hof-intro .section-desc { margin-left: auto; margin-right: auto; }
 
-/* Dinner points CTA */
 .dinner-cta {
   padding: 1.75rem;
-  background: linear-gradient(135deg, rgba(200,164,94,0.1), rgba(200,164,94,0.03));
+  background: linear-gradient(135deg, rgba(212,174,102,0.12), rgba(212,174,102,0.04));
   border: 1px solid var(--accent);
   border-radius: 20px;
   margin-bottom: 2.5rem;
   position: relative; overflow: hidden;
-  box-shadow: 0 0 40px rgba(200,164,94,0.08);
+  box-shadow: 0 0 40px rgba(212,174,102,0.1);
 }
 .dinner-cta::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -460,13 +706,13 @@ a:hover { color: var(--accent-glow); }
 }
 .dinner-cta::after {
   content: ''; position: absolute; top: -40%; right: -20%; width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(200,164,94,0.12), transparent 60%);
+  background: radial-gradient(circle, rgba(212,174,102,0.14), transparent 60%);
   pointer-events: none;
 }
 .dinner-cta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 1; }
 .dinner-cta-icon {
   width: 48px; height: 48px; border-radius: 12px;
-  background: rgba(200,164,94,0.15); border: 1px solid var(--border-strong);
+  background: rgba(212,174,102,0.18); border: 1px solid var(--border-strong);
   display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
 }
 .dinner-cta-label {
@@ -489,7 +735,7 @@ a:hover { color: var(--accent-glow); }
   .dinner-cta p { font-size: 0.95rem; }
 }
 
-/* Podium — mobile: horizontal cards */
+/* Podium */
 .hof-podium {
   display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem;
 }
@@ -497,11 +743,12 @@ a:hover { color: var(--accent-glow); }
   display: flex; align-items: center; gap: 1rem;
   padding: 1.25rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 16px; position: relative; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .hof-podium-item::before {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
 }
-.hof-podium-item.gold { border-color: var(--accent); background: linear-gradient(135deg, rgba(200,164,94,0.1), var(--bg-card)); }
+.hof-podium-item.gold { border-color: var(--accent); background: linear-gradient(135deg, rgba(212,174,102,0.12), var(--bg-card)); }
 .hof-podium-item.gold::before { background: var(--accent); }
 .hof-podium-item.silver::before { background: #b0b0b0; opacity: 0.5; }
 .hof-podium-item.bronze::before { background: #a0785a; opacity: 0.5; }
@@ -514,7 +761,6 @@ a:hover { color: var(--accent-glow); }
 .hof-score { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
 .hof-podium-info { display: flex; flex-direction: column; }
 
-/* Desktop podium — back to vertical columns */
 @media (min-width: 769px) {
   .hof-podium { flex-direction: row; justify-content: center; align-items: flex-end; gap: 1rem; margin-bottom: 4rem; }
   .hof-podium-item {
@@ -530,17 +776,18 @@ a:hover { color: var(--accent-glow); }
   .hof-podium-item.silver::after { background: linear-gradient(to right, transparent, #b0b0b0, transparent); opacity: 0.4; }
   .hof-podium-item.bronze::after { background: linear-gradient(to right, transparent, #a0785a, transparent); opacity: 0.4; }
   .hof-rank { font-size: 3rem; min-width: auto; margin-bottom: 0.75rem; }
-  .gold .hof-rank { font-size: 3.5rem; text-shadow: 0 0 30px rgba(200,164,94,0.3); }
+  .gold .hof-rank { font-size: 3.5rem; text-shadow: 0 0 30px rgba(212,174,102,0.4); }
   .hof-name { font-size: 1.1rem; margin-bottom: 0.25rem; }
 }
 
-/* Scoreboard table — horizontal scroll on mobile */
+/* Scoreboard table */
 .hof-table-wrapper {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
   overflow-x: auto; -webkit-overflow-scrolling: touch;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 .hof-table { width: 100%; border-collapse: collapse; min-width: 420px; }
-.hof-table thead { background: rgba(200,164,94,0.06); }
+.hof-table thead { background: rgba(212,174,102,0.07); }
 .hof-table th {
   font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted);
@@ -549,7 +796,7 @@ a:hover { color: var(--accent-glow); }
 }
 .hof-table td {
   padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--text-secondary);
-  border-bottom: 1px solid rgba(200,164,94,0.06); white-space: nowrap;
+  border-bottom: 1px solid rgba(212,174,102,0.06); white-space: nowrap;
 }
 .hof-table tbody tr { transition: background 0.2s; }
 .hof-table .rank-cell { font-family: var(--font-mono); font-weight: 700; color: var(--accent); width: 40px; }
@@ -558,19 +805,19 @@ a:hover { color: var(--accent-glow); }
 .hof-table tbody tr:nth-child(2) .rank-cell { color: #b0b0b0; }
 .hof-table tbody tr:nth-child(3) .rank-cell { color: #a0785a; }
 
-.de-lul-row { background: rgba(184,84,80,0.06); }
+.de-lul-row { background: rgba(199,90,85,0.06); }
 .de-lul-badge {
   display: inline-block; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.06em; color: var(--red); padding: 0.2rem 0.5rem;
-  border: 1px solid rgba(184,84,80,0.3); border-radius: 100px; background: rgba(184,84,80,0.08);
+  border: 1px solid rgba(199,90,85,0.3); border-radius: 100px; background: rgba(199,90,85,0.08);
   white-space: nowrap;
 }
 
 .de-lul-explainer {
   display: flex; flex-direction: column; gap: 0.75rem;
   margin-top: 1.5rem; padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(184,84,80,0.06), rgba(184,84,80,0.02));
-  border: 1px solid rgba(184,84,80,0.2); border-radius: 16px;
+  background: linear-gradient(135deg, rgba(199,90,85,0.07), rgba(199,90,85,0.02));
+  border: 1px solid rgba(199,90,85,0.2); border-radius: 16px;
 }
 .de-lul-explainer-icon { font-size: 1.75rem; line-height: 1; }
 .de-lul-explainer h4 { font-family: var(--font-display); font-size: 1.05rem; color: var(--red); margin-bottom: 0.25rem; }
@@ -595,14 +842,14 @@ a:hover { color: var(--accent-glow); }
 .yt-link {
   display: flex; align-items: center; gap: 1rem;
   margin-top: 0.75rem; padding: 1rem 1.25rem;
-  background: rgba(200,164,94,0.06); border: 1px solid var(--border-strong);
+  background: rgba(212,174,102,0.07); border: 1px solid var(--border-strong);
   border-radius: 12px; text-decoration: none;
   transition: background 0.3s, border-color 0.3s, transform 0.3s;
   -webkit-tap-highlight-color: transparent;
 }
 .yt-link:first-of-type { margin-top: 1.5rem; }
 .yt-link:hover, .yt-link:active {
-  background: rgba(200,164,94,0.12); border-color: var(--accent);
+  background: rgba(212,174,102,0.14); border-color: var(--accent);
   transform: translateY(-2px);
 }
 .yt-link-play {
@@ -610,7 +857,7 @@ a:hover { color: var(--accent-glow); }
   width: 44px; height: 44px; border-radius: 50%;
   background: var(--accent); color: var(--bg-deep);
   font-size: 1rem; flex-shrink: 0;
-  box-shadow: 0 0 20px rgba(200,164,94,0.25);
+  box-shadow: 0 0 20px rgba(212,174,102,0.3);
 }
 .yt-link-text { display: flex; flex-direction: column; }
 .yt-link-text strong { font-family: var(--font-display); font-size: 0.95rem; color: var(--text-primary); }
@@ -626,7 +873,7 @@ a:hover { color: var(--accent-glow); }
 .notice-banner-inner {
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, rgba(200,164,94,0.06), rgba(200,164,94,0.02));
+  background: linear-gradient(135deg, rgba(212,174,102,0.07), rgba(212,174,102,0.02));
   border: 1px solid var(--border-strong); border-radius: 16px;
   border-left: 4px solid var(--accent);
 }
@@ -655,7 +902,7 @@ a:hover { color: var(--accent-glow); }
 .footer::before {
   content: ''; position: absolute; bottom: -50%; left: 50%; transform: translateX(-50%);
   width: 400px; height: 200px; border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(200,164,94,0.04), transparent); pointer-events: none;
+  background: radial-gradient(ellipse, rgba(212,174,102,0.05), transparent); pointer-events: none;
 }
 .footer-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
 .footer-logo span { color: var(--accent); }
@@ -686,6 +933,7 @@ a:hover { color: var(--accent-glow); }
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#locatie">Locatie</a></li>
     <li><a href="#planning">Planning</a></li>
+    <li><a href="#punten">Punten</a></li>
     <li><a href="#halloffame">Hall of Fame</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -694,6 +942,7 @@ a:hover { color: var(--accent-glow); }
   <a href="#home" onclick="toggleMenu()">Home</a>
   <a href="#locatie" onclick="toggleMenu()">Locatie</a>
   <a href="#planning" onclick="toggleMenu()">Planning</a>
+  <a href="#punten" onclick="toggleMenu()">Punten</a>
   <a href="#halloffame" onclick="toggleMenu()">Hall of Fame</a>
 </div>
 
@@ -751,7 +1000,7 @@ a:hover { color: var(--accent-glow); }
 <!-- LOCATIE -->
 <div class="section-wrap locatie-wrap">
   <div class="section-blob" style="width:400px;height:400px;background:rgba(90,154,106,0.4);top:-10%;left:-15%"></div>
-  <div class="section-blob" style="width:300px;height:300px;background:rgba(200,164,94,0.3);bottom:-15%;right:-10%"></div>
+  <div class="section-blob" style="width:300px;height:300px;background:rgba(212,174,102,0.3);bottom:-15%;right:-10%"></div>
   <div class="divider"><div class="divider-icon">📍</div></div>
   <section class="section" id="locatie">
     <svg class="section-illus" width="300" height="300" viewBox="0 0 300 300" fill="none"><circle cx="150" cy="130" r="80" stroke="var(--accent)" stroke-width="1.5"/><path d="M150 50 L150 30 M150 210 L150 230 M70 130 L50 130 M230 130 L250 130" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="130" r="5" fill="var(--accent)"/><path d="M150 50 L160 130 L150 210 L140 130Z" fill="var(--accent)" fill-opacity=".15" stroke="var(--accent)" stroke-width=".5"/><text x="150" y="270" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">HEEG</text><text x="150" y="285" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">FRIESLAND</text></svg>
@@ -798,7 +1047,7 @@ a:hover { color: var(--accent-glow); }
 <!-- PLANNING -->
 <div class="section-wrap planning-wrap">
   <div class="section-blob" style="width:350px;height:350px;background:rgba(74,122,154,0.35);top:10%;right:-15%"></div>
-  <div class="section-blob" style="width:250px;height:250px;background:rgba(200,164,94,0.2);bottom:5%;left:-10%"></div>
+  <div class="section-blob" style="width:250px;height:250px;background:rgba(212,174,102,0.2);bottom:5%;left:-10%"></div>
   <div class="divider"><div class="divider-icon">📋</div></div>
   <section class="section" id="planning">
     <svg class="section-illus" width="260" height="300" viewBox="0 0 260 300" fill="none"><rect x="30" y="20" width="200" height="260" rx="16" stroke="var(--accent)" stroke-width="1.5"/><rect x="30" y="20" width="200" height="50" rx="16" fill="var(--accent)" fill-opacity=".06" stroke="var(--accent)" stroke-width="1"/><line x1="70" y1="100" x2="200" y2="100" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="140" x2="200" y2="140" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="180" x2="200" y2="180" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="220" x2="200" y2="220" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><circle cx="52" cy="100" r="6" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="140" r="6" fill="var(--accent)" fill-opacity=".3" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="180" r="6" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="220" r="6" stroke="var(--accent)" stroke-width="1"/><text x="130" y="52" text-anchor="middle" font-family="monospace" font-size="11" fill="var(--accent)">MEI 2026</text></svg>
@@ -853,14 +1102,92 @@ a:hover { color: var(--accent-glow); }
   </section>
 </div>
 
+<!-- PUNTEN — NIEUWE SECTIE -->
+<div class="section-wrap punten-wrap">
+  <div class="section-blob" style="width:380px;height:380px;background:rgba(212,174,102,0.4);top:5%;left:-12%"></div>
+  <div class="section-blob" style="width:280px;height:280px;background:rgba(74,122,154,0.25);bottom:10%;right:-10%"></div>
+  <div class="divider"><div class="divider-icon">🎯</div></div>
+  <section class="section" id="punten">
+    <div class="reveal">
+      <div class="section-label">03 &mdash; Punten Verdienen</div>
+      <h2 class="section-title">Punten</h2>
+      <p class="section-desc">Tijdens het weekend zijn er volop kansen om <strong>punten bij te schrijven</strong> op het scorebord. De grote brokken: een <strong>beerpong toernooi</strong> in willekeurig samengestelde teams van 2, en het <strong>Pitch &amp; Putt</strong> op zaterdag. Daarnaast komen er gedurende het weekend nog meer mogelijkheden voorbij. Genoeg ruimte dus om te ontsnappen aan de onderste twee plekken — en dus aan het regelen van volgend jaar.</p>
+    </div>
+
+    <div class="punten-grid">
+      <!-- Beerpong card -->
+      <div class="punten-card reveal reveal-delay-1">
+        <div class="punten-card-bignum">01</div>
+        <div class="punten-card-header">
+          <div class="punten-card-icon">🍻</div>
+          <div>
+            <div class="punten-card-tag">Toernooi · Teams van 2</div>
+            <h3 class="punten-card-title">Beerpong Toernooi</h3>
+          </div>
+        </div>
+        <p class="punten-card-body">
+          De teams worden <strong>willekeurig ingedeeld</strong> — geen geklets over wie met wie speelt. Ben je ingedeeld met de beste werper van het stel? Top! Krijg je <em>Militair 1</em> als partner? Pech. Het toernooi bepaalt wie zich mag mengen in de top en wie alvast richting de bodem zakt.
+        </p>
+        <div class="punten-podium">
+          <div class="punten-podium-spot gold">
+            <div class="punten-podium-place">1e plek</div>
+            <div class="punten-podium-points">8</div>
+            <div class="punten-podium-label">punten</div>
+          </div>
+          <div class="punten-podium-spot silver">
+            <div class="punten-podium-place">2e plek</div>
+            <div class="punten-podium-points">4</div>
+            <div class="punten-podium-label">punten</div>
+          </div>
+          <div class="punten-podium-spot bronze">
+            <div class="punten-podium-place">3e plek</div>
+            <div class="punten-podium-points">2</div>
+            <div class="punten-podium-label">punten</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pitch & Putt card -->
+      <div class="punten-card reveal reveal-delay-2">
+        <div class="punten-card-bignum">02</div>
+        <div class="punten-card-header">
+          <div class="punten-card-icon">⛳</div>
+          <div>
+            <div class="punten-card-tag">Zaterdag · Koudum</div>
+            <h3 class="punten-card-title">Pitch &amp; Putt</h3>
+          </div>
+        </div>
+        <p class="punten-card-body">
+          Op zaterdag trekken we naar Koudum voor een potje <strong>Pitch &amp; Putt</strong>. Het winnende team mag <em>8 punten</em> bijschrijven op het scorebord. Een kans om in één klap dichtbij de top te komen — of om te zien dat je swing er na een paar pilsjes echt niet beter op wordt.
+        </p>
+        <div class="punten-prize-single">
+          <div class="punten-prize-single-num">8</div>
+          <div class="punten-prize-single-text">
+            <strong>Punten voor het winnende team</strong>
+            <span>Winnen of niet — that's it</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mystery card: meer punten te halen -->
+    <div class="punten-mystery reveal reveal-delay-3">
+      <div class="punten-mystery-icon">✨</div>
+      <div class="punten-mystery-tag">En verder...</div>
+      <h3>Meer punten onderweg</h3>
+      <p>Tijdens het weekend duiken er <strong>nog meer mogelijkheden</strong> op om punten te scoren. Wat, wanneer en hoeveel? Dat is nog even geheim. Houd je ogen open.</p>
+    </div>
+  </section>
+</div>
+
 <!-- HALL OF FAME -->
 <div class="section-wrap hof-wrap">
-  <div class="section-blob" style="width:400px;height:400px;background:rgba(200,164,94,0.3);top:5%;left:50%;transform:translateX(-50%)"></div>
-  <div class="section-blob" style="width:250px;height:250px;background:rgba(184,84,80,0.2);bottom:10%;right:-8%"></div>
+  <div class="section-blob" style="width:400px;height:400px;background:rgba(212,174,102,0.3);top:5%;left:50%;transform:translateX(-50%)"></div>
+  <div class="section-blob" style="width:250px;height:250px;background:rgba(199,90,85,0.2);bottom:10%;right:-8%"></div>
   <div class="divider"><div class="divider-icon">🏆</div></div>
   <section class="section" id="halloffame">
     <div class="hof-intro reveal">
-      <div class="section-label">03 &mdash; Het Scorebord</div>
+      <div class="section-label">04 &mdash; Het Scorebord</div>
       <h2 class="section-title">Hall of Fame</h2>
       <p class="section-desc">Dit jaar voor het eerst een scorebord. De onderste twee op het scorebord? Die moeten volgend jaar het Zwieneboer'n Weekend organiseren. Voor en tijdens het weekend zijn punten te verdienen.</p>
     </div>
@@ -879,7 +1206,6 @@ a:hover { color: var(--accent-glow); }
     </div>
 
     <div class="hof-podium reveal">
-      <!-- Mobile order: gold first, then silver, bronze -->
       <div class="hof-podium-item gold"><div class="hof-rank">1</div><div class="hof-podium-info"><div class="hof-name">Militair 1</div><div class="hof-score">7 punten</div></div></div>
       <div class="hof-podium-item silver"><div class="hof-rank">2</div><div class="hof-podium-info"><div class="hof-name">Militair 2</div><div class="hof-score">7 punten</div></div></div>
       <div class="hof-podium-item bronze"><div class="hof-rank">3</div><div class="hof-podium-info"><div class="hof-name">Deuin</div><div class="hof-score">2 punten</div></div></div>
