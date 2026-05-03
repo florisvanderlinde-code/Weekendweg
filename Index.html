@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Zwieneboer'n Weekend 2026</title>
+<meta name="theme-color" content="#0c0f14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0f14;
+  --card:#161a21;
+  --card2:#1c2028;
+  --text:#f0ece4;
+  --text2:#a09a92;
+  --text3:#5e5a54;
+  --gold:#d4ae66;
+  --goldl:#f0d07a;
+  --goldd:#8a6f3a;
+  --red:#c75a55;
+  --green:#5a9a6a;
+  --b1:rgba(212,174,102,0.14);
+  --b2:rgba(212,174,102,0.28);
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'DM Sans',sans-serif;
+  --fm:'Space Mono',monospace;
+}
+html{background:var(--bg);color:var(--text);font-family:var(--fb);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;background:rgba(12,15,20,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(–b1)}
+.nav-logo{font-family:var(–fd);font-size:1.05rem;font-weight:700;color:var(–text)}
+.nav-logo em{color:var(–gold);font-style:normal}
+.nav-tag{font-family:var(–fm);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–gold);padding:0.25rem 0.7rem;border:1px solid var(–b2);border-radius:100px;background:rgba(212,174,102,0.07)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(212,174,102,0.1) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(90,154,106,0.05) 0%,transparent 60%),radial-gradient(ellipse 40% 35% at 80% 70%,rgba(199,90,85,0.04) 0%,transparent 55%)}
+.hero-content{position:relative;z-index:1;max-width:820px}
+.hero-eyebrow{font-family:var(–fm);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(–text3);margin-bottom:1.25rem;animation:up 0.8s 0.1s both}
+.hero-title{font-family:var(–fd);font-size:clamp(3rem,13vw,7.5rem);font-weight:900;line-height:0.92;letter-spacing:-0.02em;margin-bottom:1.5rem;animation:up 0.8s 0.25s both}
+.hero-title .g{color:var(–gold);text-shadow:0 0 60px rgba(212,174,102,0.25)}
+.hero-title .i{font-style:italic;font-weight:400;color:var(–text2)}
+.hero-year{display:inline-block;font-family:var(–fm);font-size:0.7rem;letter-spacing:0.2em;color:var(–gold);padding:0.35rem 1rem;border:1px solid var(–b2);border-radius:100px;background:rgba(212,174,102,0.07);margin-bottom:2rem;animation:up 0.8s 0.35s both}
+.hero-sub{font-size:1.05rem;color:var(–text2);line-height:1.75;max-width:520px;margin:0 auto 3rem;animation:up 0.8s 0.45s both}
+.hero-sub strong{color:var(–gold);font-weight:600}
+.hero-final{display:inline-flex;align-items:center;gap:0.6rem;padding:0.6rem 1.25rem;background:linear-gradient(135deg,rgba(199,90,85,0.15),rgba(199,90,85,0.05));border:1px solid rgba(199,90,85,0.35);border-radius:14px;font-family:var(–fm);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:#e07a76;animation:up 0.8s 0.55s both}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(–text3);font-family:var(–fm);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;animation:up 1s 1s both}
+.hero-scroll-line{width:1px;height:28px;background:linear-gradient(to bottom,var(–gold),transparent);animation:pline 2s infinite}
+@keyframes pline{0%,100%{opacity:1;height:28px}50%{opacity:0.3;height:14px}}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* SHARED */
+.wrap{position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:0.06;pointer-events:none}
+.section{max-width:1100px;margin:0 auto;padding:5rem 1.5rem;position:relative;z-index:1}
+.divider{max-width:1100px;margin:0 auto;height:1px;background:linear-gradient(to right,transparent,var(–b2),transparent);position:relative}
+.divider-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:var(–bg);border:1px solid var(–b2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.85rem}
+.lbl{font-family:var(–fm);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
+.lbl::before{content:’’;width:20px;height:1px;background:var(–gold);flex-shrink:0}
+.hdg{font-family:var(–fd);font-size:clamp(1.6rem,5vw,3rem);font-weight:700;line-height:1.1;margin-bottom:0.9rem}
+.dsc{font-size:0.95rem;color:var(–text2);line-height:1.8;max-width:600px;margin-bottom:2rem}
+.dsc strong{color:var(–gold);font-weight:600}
+.r{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.r.on{opacity:1;transform:none}
+.r1{transition-delay:0.1s}
+.r2{transition-delay:0.2s}
+.r3{transition-delay:0.3s}
+
+/* SCOREBOARD */
+.score-bg{background:linear-gradient(180deg,var(–bg) 0%,#0f1219 40%,#0f1219 60%,var(–bg) 100%)}
+.podium{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem}
+.pi{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:var(–card);border:1px solid var(–b2);border-radius:14px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.25)}
+.pi:hover{transform:translateX(4px);border-color:var(–b2)}
+.pi::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:14px 0 0 14px}
+.pi.p1{background:linear-gradient(135deg,rgba(212,174,102,0.12),var(–card));border-color:var(–gold);box-shadow:0 0 30px rgba(212,174,102,0.08)}
+.pi.p1::before{background:var(–gold);width:4px}
+.pi.p2::before{background:#b0b0b0;opacity:0.5}
+.pi.p3::before{background:#a0785a;opacity:0.5}
+.pi.lul{background:linear-gradient(135deg,rgba(199,90,85,0.08),var(–card));border-color:rgba(199,90,85,0.2)}
+.pi.lul::before{background:var(–red);opacity:0.6}
+.pi-rank{font-family:var(–fd);font-size:1.5rem;font-weight:900;min-width:32px;line-height:1}
+.p1 .pi-rank{color:var(–gold)}
+.p2 .pi-rank{color:#b0b0b0}
+.p3 .pi-rank{color:#a0785a}
+.lul .pi-rank{color:var(–red);opacity:0.7}
+.pi-info{flex:1}
+.pi-name{font-family:var(–fd);font-size:1rem;font-weight:700}
+.pi-pts{font-family:var(–fm);font-size:0.68rem;color:var(–text3);margin-top:0.1rem}
+.p1 .pi-pts{color:var(–gold);opacity:0.8}
+.pi-badge{font-family:var(–fm);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:100px;flex-shrink:0;white-space:nowrap}
+.bg-gold{background:rgba(212,174,102,0.15);color:var(–gold);border:1px solid var(–b2)}
+.bg-lul{background:rgba(199,90,85,0.1);color:var(–red);border:1px solid rgba(199,90,85,0.25)}
+.bg-safe{background:rgba(90,154,106,0.1);color:#7ec48e;border:1px solid rgba(90,154,106,0.25)}
+
+/* MOMENTS */
+.hoogte-bg{background:linear-gradient(180deg,var(–bg) 0%,#10120f 40%,#10120f 60%,var(–bg) 100%)}
+.mgrid{display:grid;grid-template-columns:1fr;gap:1rem}
+.mc{padding:1.5rem;background:var(–card);border:1px solid var(–b2);border-radius:18px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.mc:hover{transform:translateY(-3px);border-color:var(–b2);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+.mc::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(–gold),transparent);opacity:0.45}
+.mc.ft{background:linear-gradient(135deg,rgba(212,174,102,0.1),var(–card));border-color:var(–b2)}
+.mc.ft::before{opacity:0.9}
+.mc-emoji{font-size:1.75rem;margin-bottom:0.9rem;display:block}
+.mc-title{font-family:var(–fd);font-size:1.05rem;font-weight:700;margin-bottom:0.5rem}
+.mc-text{font-size:0.88rem;color:var(–text2);line-height:1.7}
+.mc-text strong{color:var(–text);font-weight:600}
+.mc-text em{color:var(–gold);font-style:italic}
+
+/* LUL */
+.lul-bg{background:linear-gradient(180deg,var(–bg) 0%,#130f0f 40%,#130f0f 60%,var(–bg) 100%)}
+.lul-box{padding:2rem 1.75rem;background:linear-gradient(135deg,rgba(199,90,85,0.1),rgba(199,90,85,0.03));border:1px solid rgba(199,90,85,0.3);border-radius:22px;position:relative;overflow:hidden;box-shadow:0 0 50px rgba(199,90,85,0.07)}
+.lul-box::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,var(–red),transparent)}
+.lul-bg-txt{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(–fd);font-size:16rem;font-weight:900;font-style:italic;color:var(–red);opacity:0.04;pointer-events:none;white-space:nowrap;line-height:1}
+.lul-hdr{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.25rem;position:relative;z-index:1}
+.lul-icon{width:52px;height:52px;border-radius:14px;background:rgba(199,90,85,0.15);border:1px solid rgba(199,90,85,0.3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.lul-lbl{font-family:var(–fm);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(–red);margin-bottom:0.3rem}
+.lul-title{font-family:var(–fd);font-size:1.25rem;font-weight:700;color:var(–text)}
+.lul-body{position:relative;z-index:1;font-size:0.9rem;color:var(–text2);line-height:1.75}
+.lul-body p+p{margin-top:0.75rem}
+.lul-body strong{color:var(–text);font-weight:600}
+.lul-body em{color:var(–red);font-style:italic}
+.lul-names{display:flex;gap:0.75rem;margin-top:1.25rem;flex-wrap:wrap;position:relative;z-index:1}
+.lul-name{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 1rem;border-radius:12px;background:rgba(199,90,85,0.12);border:1px solid rgba(199,90,85,0.3);font-family:var(–fd);font-size:1rem;font-weight:700;color:#e07a76}
+.lul-name span{font-family:var(–fm);font-size:0.6rem;color:var(–text3)}
+.safe-card{padding:1.5rem;margin-top:1.5rem;background:linear-gradient(135deg,rgba(90,154,106,0.1),rgba(90,154,106,0.02));border:1px solid rgba(90,154,106,0.25);border-radius:18px;display:flex;align-items:flex-start;gap:1rem;position:relative;overflow:hidden}
+.safe-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,#5a9a6a,transparent)}
+.safe-icon{width:46px;height:46px;border-radius:12px;flex-shrink:0;background:rgba(90,154,106,0.15);border:1px solid rgba(90,154,106,0.3);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.safe-text{font-size:0.88rem;color:var(–text2);line-height:1.7}
+.safe-text strong{color:#7ec48e;font-weight:600}
+.safe-text .nm{font-family:var(–fd);font-size:0.95rem;font-weight:700;color:var(–text);display:block;margin-bottom:0.3rem}
+
+/* OUTRO */
+.outro-bg{background:linear-gradient(180deg,var(–bg) 0%,#0d1110 50%,var(–bg) 100%)}
+.outro-c{text-align:center}
+.outro-c .lbl{justify-content:center}
+.outro-c .lbl::before{display:none}
+.outro-quote{max-width:560px;margin:0 auto 2.5rem;font-family:var(–fd);font-size:1.15rem;font-style:italic;color:var(–text2);line-height:1.75;position:relative;padding:0 1rem}
+.outro-quote::before{content:’”’;font-size:4rem;color:var(–gold);opacity:0.2;position:absolute;top:-1.25rem;left:0;line-height:1}
+.outro-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;max-width:480px;margin:0 auto 3rem}
+.ostat{padding:1.25rem 1rem;background:var(–card);border:1px solid var(–b1);border-radius:16px;text-align:center;position:relative;overflow:hidden}
+.ostat::before{content:’’;position:absolute;top:0;left:20%;right:20%;height:1.5px;background:linear-gradient(to right,transparent,var(–gold),transparent);opacity:0.5}
+.ostat-n{font-family:var(–fd);font-size:1.6rem;font-weight:900;color:var(–gold);line-height:1}
+.ostat-l{font-size:0.68rem;color:var(–text3);margin-top:0.25rem}
+.outro-next{display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:1.75rem 2rem;background:linear-gradient(135deg,rgba(212,174,102,0.1),rgba(212,174,102,0.03));border:1px solid var(–b2);border-radius:20px;max-width:480px;margin:0 auto}
+.outro-next-lbl{font-family:var(–fm);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(–gold)}
+.outro-next-txt{font-family:var(–fd);font-size:1.1rem;font-weight:700;color:var(–text);text-align:center}
+.outro-next-sub{font-size:0.83rem;color:var(–text2);text-align:center;line-height:1.7}
+.outro-next-sub em{color:var(–red);font-style:italic}
+
+/* FOOTER */
+.footer{padding:3rem 1.5rem;text-align:center;border-top:1px solid var(–b1)}
+.footer-logo{font-family:var(–fd);font-size:1.1rem;font-weight:700;margin-bottom:0.4rem}
+.footer-logo em{color:var(–gold);font-style:normal}
+.footer-txt{font-size:0.72rem;color:var(–text3);line-height:1.7}
+
+@media(min-width:600px){
+.mgrid{grid-template-columns:1fr 1fr}
+.outro-stats{grid-template-columns:repeat(4,1fr);max-width:100%}
+}
+@media(min-width:900px){
+.section{padding:7rem 2rem}
+.pi{padding:1.35rem 2rem;border-radius:16px}
+.pi-rank{font-size:2rem;min-width:40px}
+.pi-name{font-size:1.1rem}
+.mc{padding:2rem}
+.lul-box{padding:2.75rem;border-radius:26px}
+.lul-title{font-size:1.5rem}
+}
+</style>
+
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Zwieneboer<em>'n</em></div>
+  <div class="nav-tag">Editie 2026 &mdash; Afgelopen</div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">1 t/m 3 mei 2026 &nbsp;&middot;&nbsp; Heeg, Friesland</div>
+    <h1 class="hero-title">Het <span class="g">Weekend</span><br><span class="i">is voorbij.</span></h1>
+    <div class="hero-year">Editie 2026 &nbsp;&middot;&nbsp; Afgerond</div>
+    <p class="hero-sub">Drie dagen Heeg. &Eacute;&eacute;n villa. Tien kloatzakken. Gehaktballen, een golfclub en iets te veel pils later &mdash; hier is de eindstand.</p>
+    <div class="hero-final">Het spel is gespeeld. De punten zijn geteld.</div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('score').scrollIntoView({behavior:'smooth'})">
+    <span>Eindstand</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<div class="wrap score-bg">
+  <div class="blob" style="width:350px;height:350px;background:rgba(212,174,102,0.5);top:10%;left:-10%"></div>
+  <div class="blob" style="width:280px;height:280px;background:rgba(199,90,85,0.4);bottom:10%;right:-8%"></div>
+  <div class="divider"><div class="divider-dot">&#127942;</div></div>
+  <section class="section" id="score">
+    <div class="r">
+      <div class="lbl">Eindstand 2026</div>
+      <h2 class="hdg">Het Scorebord</h2>
+      <p class="dsc">Na beerpong, Pitch &amp; Putt, gehaktballen en een koude duik in de haven &mdash; dit is hoe het eindigde.</p>
+    </div>
+    <div class="podium">
+      <div class="pi p1 r r1">
+        <div class="pi-rank">1</div>
+        <div class="pi-info"><div class="pi-name">Militair 1</div><div class="pi-pts">27 punten</div></div>
+        <div class="pi-badge bg-gold">Kampioen</div>
+      </div>
+      <div class="pi p2 r r2">
+        <div class="pi-rank">2</div>
+        <div class="pi-info"><div class="pi-name">Deuin</div><div class="pi-pts">14 punten</div></div>
+        <div class="pi-badge bg-safe">Nat maar veilig</div>
+      </div>
+      <div class="pi p3 r r3">
+        <div class="pi-rank">3</div>
+        <div class="pi-info"><div class="pi-name">Den Agrar&iuml;er</div><div class="pi-pts">12 punten</div></div>
+      </div>
+      <div class="pi r r1">
+        <div class="pi-rank" style="color:var(--text3)">4</div>
+        <div class="pi-info"><div class="pi-name">Zusters</div><div class="pi-pts">10 punten</div></div>
+      </div>
+      <div class="pi r r2">
+        <div class="pi-rank" style="color:var(--text3)">5</div>
+        <div class="pi-info"><div class="pi-name">Leipe Linda</div><div class="pi-pts">10 punten</div></div>
+      </div>
+      <div class="pi r r3">
+        <div class="pi-rank" style="color:var(--text3)">6</div>
+        <div class="pi-info"><div class="pi-name">Veerboat</div><div class="pi-pts">6 punten</div></div>
+        <div class="pi-badge bg-safe">Net vrij</div>
+      </div>
+      <div class="pi lul r r1">
+        <div class="pi-rank">7</div>
+        <div class="pi-info"><div class="pi-name">Gunnepilze</div><div class="pi-pts">4 punten</div></div>
+        <div class="pi-badge bg-lul">De Lul</div>
+      </div>
+      <div class="pi lul r r2">
+        <div class="pi-rank">8</div>
+        <div class="pi-info"><div class="pi-name">Jager en Verzamelaar</div><div class="pi-pts">4 punten</div></div>
+        <div class="pi-badge bg-lul">De Lul</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap hoogte-bg">
+  <div class="blob" style="width:300px;height:300px;background:rgba(90,154,106,0.4);top:5%;right:-8%"></div>
+  <div class="divider"><div class="divider-dot">&#10024;</div></div>
+  <section class="section" id="hoogte">
+    <div class="r">
+      <div class="lbl">Terugblik</div>
+      <h2 class="hdg">Hoogtepunten</h2>
+      <p class="dsc">Wat er in de villa gebeurt, blijft in de villa. Maar sommige dingen zijn te goed om niet te onthouden.</p>
+    </div>
+    <div class="mgrid">
+      <div class="mc ft r r1">
+        <span class="mc-emoji">&#127830;</span>
+        <div class="mc-title">De Gehaktballen van de Militairen</div>
+        <div class="mc-text">Vrijdagavond namen <strong>Militair 1 en Militair 2</strong> het fornuis over en rolden gehaktballen waar je stil van werd. <em>5 punten per man</em>, en een avond die niemand snel vergeet.</div>
+      </div>
+      <div class="mc r r2">
+        <span class="mc-emoji">&#127946;</span>
+        <div class="mc-title">Deuin duikt de haven in</div>
+        <div class="mc-text"><strong>Deuin</strong> kreeg de kans om voor <em>8 punten</em> de haven in te springen &mdash; en hij deed het gewoon. Koud. Nat. Onomkeerbaar. Chapeau.</div>
+      </div>
+      <div class="mc r r3">
+        <span class="mc-emoji">&#9971;</span>
+        <div class="mc-title">Pitch &amp; Putt in Koudum</div>
+        <div class="mc-text">Zonnebril op, club in de hand en voor sommigen een diep besef dat golf toch echt een sport is. Na een paar pilsjes was de swing er niet beter op geworden, maar de sfeer des te beter.</div>
+      </div>
+      <div class="mc r r1">
+        <span class="mc-emoji">&#127866;</span>
+        <div class="mc-title">Beerpong: Militair 1 &amp; Zusters domineren</div>
+        <div class="mc-text">De tafel stond, de ballen vlogen en <strong>Militair 1 &amp; Zusters</strong> lieten zien hoe het moet. <em>8 punten</em> rijker, terwijl de rest verbaasd toekeek.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap lul-bg">
+  <div class="blob" style="width:300px;height:300px;background:rgba(199,90,85,0.5);top:15%;left:-10%"></div>
+  <div class="divider"><div class="divider-dot">&#9888;</div></div>
+  <section class="section" id="lul">
+    <div class="r">
+      <div class="lbl">De uitslag</div>
+      <h2 class="hdg">En de organisatoren van 2027 zijn...</h2>
+    </div>
+    <div class="lul-box r r1">
+      <div class="lul-bg-txt">DE LUL</div>
+      <div class="lul-hdr">
+        <div class="lul-icon">&#128203;</div>
+        <div>
+          <div class="lul-lbl">Volgend jaar organiseren</div>
+          <div class="lul-title">Gefeliciteerd. Jullie mogen het regelen.</div>
+        </div>
+      </div>
+      <div class="lul-body">
+        <p>Met respectievelijk <strong>4 punten</strong> beiden hebben <em>Gunnepilze</em> en <em>Jager en Verzamelaar</em> het onderspit gedolven. Het verschil met de rest was groot genoeg om geen discussie over te laten bestaan.</p>
+        <p>Volgend jaar is het aan jullie: locatie zoeken, villa boeken, programma bedenken, website bouwen, reserveringen regelen &mdash; het hele circus. We gaan er vast van genieten.</p>
+        <p>Pro-tip: begin op tijd. En maak misschien wat minder grappige opmerkingen over anderen die ooit moesten organiseren.</p>
+      </div>
+      <div class="lul-names">
+        <div class="lul-name">&#128308; Gunnepilze <span>4 pts</span></div>
+        <div class="lul-name">&#128308; Jager en Verzamelaar <span>4 pts</span></div>
+      </div>
+    </div>
+    <div class="safe-card r r2">
+      <div class="safe-icon">&#128563;</div>
+      <div class="safe-text">
+        <span class="nm">Veerboat &mdash; de dans ontsprongen</span>
+        Met <strong>6 punten</strong> eindigde Veerboat net buiten de gevarenzone. <strong>Twee punten</strong> verschil met de onderste twee. Twee. Punten. Volgend jaar gewoon lekker achteroverleunen terwijl anderen zweten over het programma.
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap outro-bg">
+  <div class="blob" style="width:350px;height:350px;background:rgba(212,174,102,0.35);top:20%;left:40%;transform:translateX(-50%)"></div>
+  <div class="divider"><div class="divider-dot">&#127749;</div></div>
+  <section class="section outro-c">
+    <div class="r">
+      <div class="lbl">Tot volgend jaar</div>
+      <h2 class="hdg">Dat was het dan.</h2>
+    </div>
+    <div class="outro-quote r r1">Drie dagen, tien man, &eacute;&eacute;n villa aan het Heegermeer. Wat er verder ook gebeurde &mdash; de gehaktballen waren subliem en de pils was koud. Meer hoef je eigenlijk niet te weten.</div>
+    <div class="outro-stats r r2">
+      <div class="ostat"><div class="ostat-n">3</div><div class="ostat-l">Dagen</div></div>
+      <div class="ostat"><div class="ostat-n">10</div><div class="ostat-l">Kloatzakken</div></div>
+      <div class="ostat"><div class="ostat-n">27</div><div class="ostat-l">Max punten</div></div>
+      <div class="ostat"><div class="ostat-n">&#8734;</div><div class="ostat-l">Pilsjes</div></div>
+    </div>
+    <div class="outro-next r r3">
+      <div class="outro-next-lbl">Editie 2027</div>
+      <div class="outro-next-txt">Zwieneboer'n Weekend 2027</div>
+      <div class="outro-next-sub">Locatie, datum en programma &mdash; volledig in handen van<br><em>Gunnepilze &amp; Jager en Verzamelaar.</em><br>Succes, jongens. Jullie hebben het verdiend.</div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-logo">Zwieneboer<em>'n</em> Weekend 2026</div>
+  <p class="footer-txt">Heeg &middot; Friesland &middot; 1 t/m 3 mei 2026<br><span style="opacity:.4">Wat in de villa gebeurt, blijft in de villa.</span></p>
+</footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:0.07,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.r').forEach(function(el){obs.observe(el)});
+</script>
+
+</body>
+</html>
