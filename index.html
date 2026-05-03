@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+oh<!DOCTYPE html>
 
 <html lang="nl">
 <head>
@@ -15,6 +15,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
+/* Iets lichtere basis voor meer contrast met de cards */
 –bg-deep: #0d1015;
 –bg-card: #181c23;
 –bg-card-hover: #1f242c;
@@ -28,7 +29,6 @@
 –green: #5a9a6a;
 –red: #c75a55;
 –blue: #4a7a9a;
-–orange: #d4824a;
 –border: rgba(212,174,102,0.15);
 –border-strong: rgba(212,174,102,0.3);
 –font-display: ‘Playfair Display’, Georgia, serif;
@@ -96,6 +96,7 @@ opacity: 0.7; transition: opacity 0.3s; padding: 0.5rem 1rem;
 }
 .nav-mobile a:hover, .nav-mobile a:active { opacity: 1; color: var(–accent); }
 
+/* Desktop nav */
 @media (min-width: 769px) {
 .nav { padding: 0 2rem; height: 72px; }
 .nav-links { display: flex; }
@@ -104,7 +105,7 @@ opacity: 0.7; transition: opacity 0.3s; padding: 0.5rem 1rem;
 }
 
 /* ═══════════════════════════════════
-HERO
+HERO — Mobile-first
 ═══════════════════════════════════ */
 .hero {
 position: relative; min-height: 100vh; min-height: 100dvh;
@@ -177,6 +178,7 @@ animation: fadeSlideUp 1s 0.8s both; padding: 0 0.5rem;
 }
 .hero-subtitle strong { color: var(–accent); font-weight: 600; }
 
+/* Countdown — Mobile */
 .countdown {
 display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;
 animation: fadeSlideUp 1s 1s both; max-width: 400px; margin: 0 auto;
@@ -206,6 +208,7 @@ animation: fadeSlideUp 1s 1.2s both; cursor: pointer;
 @keyframes scroll-pulse { 0%,100% { opacity: 1; height: 30px; } 50% { opacity: 0.3; height: 15px; } }
 @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
+/* Desktop hero overrides */
 @media (min-width: 769px) {
 .hero { padding: 2rem; }
 .hero-badge { font-size: 0.75rem; padding: 0.5rem 1.25rem; margin-bottom: 2rem; }
@@ -404,26 +407,6 @@ letter-spacing: 0.1em; text-transform: uppercase; color: var(–bg-deep);
 background: var(–accent); padding: 0.2rem 0.55rem; border-radius: 100px;
 margin-left: 0.5rem; vertical-align: middle; font-weight: 700;
 }
-.planning-item-tag-orange {
-display: inline-block; font-family: var(–font-mono); font-size: 0.55rem;
-letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
-background: var(–orange); padding: 0.2rem 0.55rem; border-radius: 100px;
-margin-left: 0.5rem; vertical-align: middle; font-weight: 700;
-}
-
-/* ═══════════════════════════════════
-ONTBIJT ITEM — speciaal stijltje
-═══════════════════════════════════ */
-.planning-item-ontbijt {
-background: linear-gradient(135deg, rgba(212,130,74,0.12), var(–bg-card));
-border-color: rgba(212,130,74,0.35);
-box-shadow: 0 0 20px rgba(212,130,74,0.08);
-}
-.planning-item-ontbijt::before {
-width: 4px;
-background: linear-gradient(to bottom, #f0a060, var(–orange));
-}
-.planning-item-ontbijt .planning-item-time { color: #f0a060; font-weight: 700; }
 
 /* Desktop planning */
 @media (min-width: 769px) {
@@ -455,11 +438,10 @@ flex-direction: row; align-items: center; gap: 1.25rem;
 .planning-item-time { min-width: 60px; flex-shrink: 0; font-size: 0.8rem; }
 .planning-item-text { font-size: 0.95rem; }
 .planning-item-tag { font-size: 0.6rem; padding: 0.25rem 0.65rem; }
-.planning-item-tag-orange { font-size: 0.6rem; padding: 0.25rem 0.65rem; }
 }
 
 /* ═══════════════════════════════════
-PUNTEN
+PUNTEN — NIEUWE SECTIE
 ═══════════════════════════════════ */
 .punten-wrap {
 background: linear-gradient(180deg, var(–bg-deep) 0%, #14110d 25%, #181410 50%, #14110d 75%, var(–bg-deep) 100%);
@@ -497,20 +479,7 @@ background: linear-gradient(to right, transparent, var(–accent), transparent);
 opacity: 0.7;
 }
 
-/* Ontbijt card — oranje accent */
-.punten-card-ontbijt {
-border-color: rgba(212,130,74,0.3);
-background: linear-gradient(140deg, rgba(212,130,74,0.07) 0%, var(–bg-card) 100%);
-}
-.punten-card-ontbijt::before {
-background: linear-gradient(to right, transparent, var(–orange), transparent);
-opacity: 0.8;
-}
-.punten-card-ontbijt:hover {
-border-color: rgba(212,130,74,0.5);
-box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,130,74,0.1);
-}
-
+/* Decoratieve grote letter achtergrond */
 .punten-card-bignum {
 position: absolute;
 top: -1rem; right: -0.5rem;
@@ -538,17 +507,9 @@ display: flex; align-items: center; justify-content: center;
 font-size: 1.5rem; flex-shrink: 0;
 box-shadow: 0 0 20px rgba(212,174,102,0.1);
 }
-.punten-card-icon-orange {
-background: linear-gradient(135deg, rgba(212,130,74,0.2), rgba(212,130,74,0.05));
-border-color: rgba(212,130,74,0.35);
-box-shadow: 0 0 20px rgba(212,130,74,0.12);
-}
 .punten-card-tag {
 font-family: var(–font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
 text-transform: uppercase; color: var(–accent); margin-bottom: 0.3rem;
-}
-.punten-card-tag-orange {
-color: var(–orange);
 }
 .punten-card-title {
 font-family: var(–font-display); font-size: 1.3rem; font-weight: 700;
@@ -562,9 +523,8 @@ margin-bottom: 1.25rem;
 }
 .punten-card-body strong { color: var(–text-primary); font-weight: 600; }
 .punten-card-body em { color: var(–accent); font-style: italic; }
-.punten-card-body em.orange { color: var(–orange); }
 
-/* Podium */
+/* Podium voor punten per plek */
 .punten-podium {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -610,7 +570,7 @@ font-size: 0.6rem; color: var(–text-muted);
 margin-top: 0.2rem;
 }
 
-/* Single prize */
+/* Single-prize variant: één grote prijs ipv podium */
 .punten-prize-single {
 display: flex; align-items: center; gap: 1rem;
 padding: 1rem 1.25rem;
@@ -635,35 +595,7 @@ font-family: var(–font-display); font-size: 0.95rem; color: var(–text-primar
 font-size: 0.75rem; color: var(–text-muted);
 }
 
-/* Ontbijt punten grid */
-.punten-ontbijt-grid {
-display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;
-position: relative; z-index: 1; margin-bottom: 1rem;
-}
-.punten-ontbijt-slot {
-display: flex; flex-direction: column; align-items: center; justify-content: center;
-padding: 0.85rem 0.5rem; border-radius: 10px; text-align: center;
-background: linear-gradient(135deg, rgba(212,130,74,0.12), rgba(212,130,74,0.03));
-border: 1px solid rgba(212,130,74,0.3);
-}
-.punten-ontbijt-slot-num {
-font-family: var(–font-display); font-size: 1.6rem; font-weight: 900;
-color: var(–orange); line-height: 1;
-text-shadow: 0 0 10px rgba(212,130,74,0.35);
-}
-.punten-ontbijt-slot-label {
-font-size: 0.6rem; color: var(–text-muted); margin-top: 0.2rem;
-}
-.punten-ontbijt-warning {
-display: flex; align-items: center; gap: 0.6rem;
-padding: 0.75rem 1rem; border-radius: 10px;
-background: rgba(199,90,85,0.08); border: 1px solid rgba(199,90,85,0.2);
-font-size: 0.8rem; color: var(–text-secondary); line-height: 1.5;
-position: relative; z-index: 1;
-}
-.punten-ontbijt-warning strong { color: var(–red); font-weight: 600; }
-
-/* Mystery card */
+/* Mystery card — voor “meer punten te halen” */
 .punten-mystery {
 position: relative;
 background: linear-gradient(135deg, rgba(212,174,102,0.06), rgba(20,17,13,0.8));
@@ -718,6 +650,7 @@ position: relative; z-index: 1;
 }
 .punten-mystery p strong { color: var(–accent); font-weight: 600; }
 
+/* Desktop overrides voor Punten */
 @media (min-width: 769px) {
 .punten-grid {
 grid-template-columns: 1fr 1fr;
@@ -739,10 +672,7 @@ margin-bottom: 2.5rem;
 .punten-prize-single-num { font-size: 3rem; }
 .punten-prize-single-text strong { font-size: 1.05rem; }
 .punten-prize-single-text span { font-size: 0.8rem; }
-.punten-ontbijt-grid { gap: 0.75rem; }
-.punten-ontbijt-slot { padding: 1.1rem 0.75rem; border-radius: 12px; }
-.punten-ontbijt-slot-num { font-size: 2rem; }
-.punten-ontbijt-slot-label { font-size: 0.65rem; }
+
 .punten-mystery { padding: 2.75rem; border-radius: 24px; }
 .punten-mystery::before { font-size: 24rem; }
 .punten-mystery-icon { width: 64px; height: 64px; font-size: 1.8rem; margin-bottom: 1.25rem; }
@@ -797,50 +727,6 @@ text-transform: uppercase; color: var(–accent); margin-bottom: 0.35rem;
 .dinner-cta p em { color: var(–accent); font-style: italic; }
 .dinner-cta-points { color: var(–accent) !important; font-family: var(–font-mono); font-weight: 700 !important; }
 
-/* Ontbijt CTA — oranje variant */
-.ontbijt-cta {
-padding: 1.75rem;
-background: linear-gradient(135deg, rgba(212,130,74,0.13), rgba(212,130,74,0.04));
-border: 1px solid rgba(212,130,74,0.5);
-border-radius: 20px;
-margin-bottom: 2.5rem;
-position: relative; overflow: hidden;
-box-shadow: 0 0 40px rgba(212,130,74,0.1);
-}
-.ontbijt-cta::before {
-content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(to right, transparent, #f0a060, transparent);
-}
-.ontbijt-cta::after {
-content: ‘’; position: absolute; top: -40%; right: -20%; width: 300px; height: 300px;
-background: radial-gradient(circle, rgba(212,130,74,0.1), transparent 60%);
-pointer-events: none;
-}
-.ontbijt-cta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 1; }
-.ontbijt-cta-icon {
-width: 48px; height: 48px; border-radius: 12px;
-background: rgba(212,130,74,0.18); border: 1px solid rgba(212,130,74,0.35);
-display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
-}
-.ontbijt-cta-label {
-font-family: var(–font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
-text-transform: uppercase; color: var(–orange); margin-bottom: 0.35rem;
-}
-.ontbijt-cta-title { font-family: var(–font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(–text-primary); }
-.ontbijt-cta p { font-size: 0.9rem; color: var(–text-secondary); line-height: 1.7; margin-bottom: 0.6rem; position: relative; z-index: 1; }
-.ontbijt-cta p:last-child { margin-bottom: 0; }
-.ontbijt-cta p strong { color: var(–text-primary); font-weight: 600; }
-.ontbijt-cta p em { color: var(–orange); font-style: italic; }
-.ontbijt-cta-points { color: var(–orange) !important; font-family: var(–font-mono); font-weight: 700 !important; }
-.ontbijt-cta-warning {
-display: flex; align-items: center; gap: 0.75rem;
-padding: 0.875rem 1.25rem; border-radius: 10px;
-background: rgba(199,90,85,0.08); border: 1px solid rgba(199,90,85,0.2);
-font-size: 0.85rem; color: var(–text-secondary); line-height: 1.5;
-position: relative; z-index: 1;
-}
-.ontbijt-cta-warning strong { color: var(–red); font-weight: 600; }
-
 @media (min-width: 769px) {
 .dinner-cta { padding: 2.25rem 2.5rem; border-radius: 24px; margin-bottom: 3rem; }
 .dinner-cta-header { gap: 1.25rem; margin-bottom: 1.25rem; }
@@ -848,12 +734,6 @@ position: relative; z-index: 1;
 .dinner-cta-label { font-size: 0.7rem; letter-spacing: 0.15em; }
 .dinner-cta-title { font-size: 1.4rem; }
 .dinner-cta p { font-size: 0.95rem; }
-.ontbijt-cta { padding: 2.25rem 2.5rem; border-radius: 24px; margin-bottom: 3rem; }
-.ontbijt-cta-header { gap: 1.25rem; margin-bottom: 1.25rem; }
-.ontbijt-cta-icon { width: 56px; height: 56px; font-size: 1.6rem; }
-.ontbijt-cta-label { font-size: 0.7rem; letter-spacing: 0.15em; }
-.ontbijt-cta-title { font-size: 1.4rem; }
-.ontbijt-cta p { font-size: 0.95rem; }
 }
 
 /* Podium */
@@ -998,19 +878,12 @@ background: linear-gradient(135deg, rgba(212,174,102,0.07), rgba(212,174,102,0.0
 border: 1px solid var(–border-strong); border-radius: 16px;
 border-left: 4px solid var(–accent);
 }
-.notice-banner-inner.orange {
-background: linear-gradient(135deg, rgba(212,130,74,0.1), rgba(212,130,74,0.02));
-border-color: rgba(212,130,74,0.35);
-border-left-color: var(–orange);
-}
 .notice-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.3; }
 .notice-text strong {
 display: block; font-family: var(–font-display); font-size: 0.95rem;
 color: var(–text-primary); margin-bottom: 0.25rem;
 }
 .notice-text p { font-size: 0.85rem; color: var(–text-secondary); line-height: 1.6; margin: 0; }
-.notice-text p strong { display: inline; font-family: var(–font-body); font-size: inherit; }
-.notice-text .orange-text { color: var(–orange); font-weight: 700; }
 
 @media (min-width: 769px) {
 .notice-banner { padding: 0 2rem; margin-top: 3rem; }
@@ -1130,18 +1003,6 @@ ANIMATIONS
   </div>
 </div>
 
-<!-- ONTBIJT NOTICE BANNER — hier al zichtbaar bovenaan -->
-
-<div class="notice-banner reveal">
-  <div class="notice-banner-inner orange">
-    <span class="notice-icon">🍳</span>
-    <div class="notice-text">
-      <strong>Zondag: de zwaarste ochtend — maar ook kansen</strong>
-      <p>De laatste ochtend wordt de zwaarste van het weekend. Wie het ontbijt verzorgt op zondag verdient <span class="orange-text">3 punten per persoon</span> — maximaal 5 mensen kunnen meedoen. Bij meerdere vrijwilligers gaat het erom wie <strong>het meeste bijdraagt</strong>.</p>
-    </div>
-  </div>
-</div>
-
 <!-- LOCATIE -->
 
 <div class="section-wrap locatie-wrap">
@@ -1242,13 +1103,6 @@ ANIMATIONS
           </div>
         </div>
         <div class="planning-items">
-          <!-- ONTBIJT ITEM — speciaal opgemaakt -->
-          <div class="planning-item planning-item-ontbijt">
-            <div class="planning-item-time">08:00 – 10:00 <span class="planning-item-tag-orange">+3 punten</span></div>
-            <div class="planning-item-text">
-              <strong>Ontbijt — de zwaarste ochtend van het weekend.</strong> Wie het ontbijt verzorgt voor de groep verdient <strong style="color:#f0a060">3 punten</strong> per persoon. Max. 5 mensen kunnen meedoen — bij meerdere vrijwilligers gaat het erom wie het meeste bijdraagt. Dit is de laatste kans om je nog op het scorebord omhoog te werken.
-            </div>
-          </div>
           <div class="planning-item"><div class="planning-item-time">11:00</div><div class="planning-item-text"><strong>Uitchecken</strong> — Villa netjes achterlaten en uitchecken. Eventueel nog boat varen.</div></div>
         </div>
       </div>
@@ -1256,7 +1110,7 @@ ANIMATIONS
   </section>
 </div>
 
-<!-- PUNTEN -->
+<!-- PUNTEN — NIEUWE SECTIE -->
 
 <div class="section-wrap punten-wrap">
   <div class="section-blob" style="width:380px;height:380px;background:rgba(212,174,102,0.4);top:5%;left:-12%"></div>
@@ -1266,7 +1120,7 @@ ANIMATIONS
     <div class="reveal">
       <div class="section-label">03 &mdash; Punten Verdienen</div>
       <h2 class="section-title">Punten</h2>
-      <p class="section-desc">Tijdens het weekend zijn er volop kansen om <strong>punten bij te schrijven</strong> op het scorebord. De grote brokken: een <strong>beerpong toernooi</strong> in willekeurig samengestelde teams van 2, en het <strong>Pitch &amp; Putt</strong> op zaterdag. Vergeet ook het <strong>zondagontbijt</strong> niet — de zwaarste ochtend levert ook punten op. Genoeg ruimte dus om te ontsnappen aan de onderste twee plekken — en dus aan het regelen van volgend jaar.</p>
+      <p class="section-desc">Tijdens het weekend zijn er volop kansen om <strong>punten bij te schrijven</strong> op het scorebord. De grote brokken: een <strong>beerpong toernooi</strong> in willekeurig samengestelde teams van 2, en het <strong>Pitch &amp; Putt</strong> op zaterdag. Daarnaast komen er gedurende het weekend nog meer mogelijkheden voorbij. Genoeg ruimte dus om te ontsnappen aan de onderste twee plekken — en dus aan het regelen van volgend jaar.</p>
     </div>
 
 ```
@@ -1324,42 +1178,9 @@ ANIMATIONS
       </div>
     </div>
   </div>
-
-  <!-- Ontbijt card — NIEUW -->
-  <div class="punten-card punten-card-ontbijt reveal reveal-delay-3" style="grid-column: 1 / -1;">
-    <div class="punten-card-bignum" style="color: var(--orange);">03</div>
-    <div class="punten-card-header">
-      <div class="punten-card-icon punten-card-icon-orange">🍳</div>
-      <div>
-        <div class="punten-card-tag punten-card-tag-orange">Zondag · De Zwaarste Ochtend</div>
-        <h3 class="punten-card-title">Zondagochtend Ontbijt</h3>
-      </div>
-    </div>
-    <p class="punten-card-body">
-      Na alles wat jullie vrijdag en zaterdag hebben uitgevreten is zondag de <strong>zwaarste ochtend van het weekend</strong> — maar wie dan tóch opstaat en voor de groep het ontbijt verzorgt, verdient daar punten mee. Per persoon die actief bijdraagt: <em class="orange">3 punten</em>. Maximaal 5 mensen kunnen meedoen. Bij meerdere vrijwilligers gaat het erom <strong>wie het meeste bijdraagt</strong> — niet alleen wie er bij staat te kijken.
-    </p>
-    <div class="punten-ontbijt-grid">
-      <div class="punten-ontbijt-slot">
-        <div class="punten-ontbijt-slot-num">3</div>
-        <div class="punten-ontbijt-slot-label">punten p.p.</div>
-      </div>
-      <div class="punten-ontbijt-slot">
-        <div class="punten-ontbijt-slot-num">max 5</div>
-        <div class="punten-ontbijt-slot-label">deelnemers</div>
-      </div>
-      <div class="punten-ontbijt-slot">
-        <div class="punten-ontbijt-slot-num">15</div>
-        <div class="punten-ontbijt-slot-label">max. punten totaal</div>
-      </div>
-    </div>
-    <div class="punten-ontbijt-warning">
-      <span>⚠️</span>
-      <span>Bij meerdere vrijwilligers beslist de groep wie <strong>het meeste bijgedragen heeft</strong>. Thee trekken telt niet.</span>
-    </div>
-  </div>
 </div>
 
-<!-- Mystery card -->
+<!-- Mystery cards -->
 <div class="punten-mystery reveal reveal-delay-3">
   <div class="punten-mystery-icon">✨</div>
   <div class="punten-mystery-tag">En verder...</div>
@@ -1395,24 +1216,7 @@ ANIMATIONS
     </div>
   </div>
   <p> Militair 1 en Militair 2 hebben machtig lekkere ballen gedraaid en daarmee:: <strong class="dinner-cta-points">5 punten</strong> op het scorebord verdiend.</p>
-  <p>Daarmee lopen ze al flink uit op de rest van de concurrentie.</p>
-</div>
-
-<!-- ONTBIJT PUNTEN CTA — in Hall of Fame sectie -->
-<div class="ontbijt-cta reveal">
-  <div class="ontbijt-cta-header">
-    <div class="ontbijt-cta-icon">🍳</div>
-    <div>
-      <div class="ontbijt-cta-label">Nog te verdienen · Zondag ochtend</div>
-      <h3 class="ontbijt-cta-title">Tot <span class="ontbijt-cta-points">3 punten p.p.</span> voor het zondagontbijt</h3>
-    </div>
-  </div>
-  <p>De laatste ochtend is de <strong>zwaarste van het weekend</strong> — maar wie opstaat en het ontbijt verzorgt, pakt er <em>3 punten</em> mee. Maximaal 5 mensen kunnen meedoen.</p>
-  <p>Bij meerdere vrijwilligers geldt: <strong>wie het meeste bijdraagt</strong> pakt de meeste punten. Thee trekken telt niet. Dit kan de beslissende zet zijn om uit de onderste twee te blijven — of juist om naar de top te klimmen.</p>
-  <div class="ontbijt-cta-warning">
-    <span>⚠️</span>
-    <span>De groep beslist achteraf wie de punten heeft verdiend. Alleen actieve bijdrage telt.</span>
-  </div>
+  <p>Daarmee lopen ze al flink uit op de rest van de concurrentie.
 </div>
 
 <div class="hof-podium reveal">
@@ -1447,6 +1251,7 @@ ANIMATIONS
 
   </section>
 </div>
+
 <!-- FOOTER -->
 
 <footer class="footer">
@@ -1460,7 +1265,7 @@ const td=new Date('2026-05-01T16:00:00+02:00');
 function uc(){const d=td-new Date();if(d<=0){document.getElementById('cd-days').textContent='🎉';document.getElementById('cd-hours').textContent='Het';document.getElementById('cd-mins').textContent='is';document.getElementById('cd-secs').textContent='NU!';return;}const D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.getElementById('cd-days').textContent=String(D).padStart(2,'0');document.getElementById('cd-hours').textContent=String(H).padStart(2,'0');document.getElementById('cd-mins').textContent=String(M).padStart(2,'0');document.getElementById('cd-secs').textContent=String(S).padStart(2,'0');}
 uc();setInterval(uc,1000);
 
-// Particles
+// Particles (fewer on mobile)
 const isMobile=window.innerWidth<769;
 const pc=document.getElementById('particles');
 for(let i=0;i<(isMobile?18:35);i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*8+'s';p.style.animationDuration=(6+Math.random()*6)+'s';const s=1+Math.random()*2;p.style.width=s+'px';p.style.height=s+'px';pc.appendChild(p);}
