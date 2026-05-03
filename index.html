@@ -75,7 +75,7 @@ body{overflow-x:hidden}
 /* SCOREBOARD */
 .score-bg{background:linear-gradient(180deg,var(–bg) 0%,#0f1219 40%,#0f1219 60%,var(–bg) 100%)}
 .podium{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem}
-.pi{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:var(–card);border:1px solid var(–b1);border-radius:14px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s}
+.pi{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:var(–card);border:1px solid var(–b2);border-radius:14px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s;box-shadow:0 4px 16px rgba(0,0,0,0.25)}
 .pi:hover{transform:translateX(4px);border-color:var(–b2)}
 .pi::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:14px 0 0 14px}
 .pi.p1{background:linear-gradient(135deg,rgba(212,174,102,0.12),var(–card));border-color:var(–gold);box-shadow:0 0 30px rgba(212,174,102,0.08)}
@@ -101,7 +101,7 @@ body{overflow-x:hidden}
 /* MOMENTS */
 .hoogte-bg{background:linear-gradient(180deg,var(–bg) 0%,#10120f 40%,#10120f 60%,var(–bg) 100%)}
 .mgrid{display:grid;grid-template-columns:1fr;gap:1rem}
-.mc{padding:1.5rem;background:var(–card);border:1px solid var(–b1);border-radius:18px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s}
+.mc{padding:1.5rem;background:var(–card);border:1px solid var(–b2);border-radius:18px;position:relative;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
 .mc:hover{transform:translateY(-3px);border-color:var(–b2);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
 .mc::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(–gold),transparent);opacity:0.45}
 .mc.ft{background:linear-gradient(135deg,rgba(212,174,102,0.1),var(–card));border-color:var(–b2)}
