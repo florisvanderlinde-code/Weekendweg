@@ -1,928 +1,330 @@
-oh<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Zwieneboer'n Weekend 2026 — Heeg</title>
-<meta name="description" content="Zwieneboer'n Weekend 2026 — 1 t/m 3 mei in Heeg. Een weekend vol avontuur, pils en sterke verhalen.">
+<title>Zwieneboer'n Weekend 2026 — Terugblik</title>
+<meta name="description" content="Het Zwieneboer'n Weekend 2026 is afgelopen. Dit is hoe het eindigde.">
 <meta name="theme-color" content="#0d1015">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-/* Iets lichtere basis voor meer contrast met de cards */
-–bg-deep: #0d1015;
-–bg-card: #181c23;
-–bg-card-hover: #1f242c;
-–bg-card-elevated: #20252e;
-–text-primary: #f3efe7;
-–text-secondary: #a8a39c;
-–text-muted: #6a655f;
-–accent: #d4ae66;
-–accent-glow: #f0d27a;
-–accent-dark: #8a6f3a;
-–green: #5a9a6a;
+–bg: #0c0f14;
+–bg-card: #161a21;
+–bg-card-2: #1c2028;
+–text: #f0ece4;
+–text-2: #a09a92;
+–text-3: #5e5a54;
+–gold: #d4ae66;
+–gold-light: #f0d07a;
+–gold-dark: #8a6f3a;
 –red: #c75a55;
-–blue: #4a7a9a;
-–border: rgba(212,174,102,0.15);
-–border-strong: rgba(212,174,102,0.3);
-–font-display: ‘Playfair Display’, Georgia, serif;
-–font-body: ‘DM Sans’, -apple-system, sans-serif;
-–font-mono: ‘Space Mono’, monospace;
-–safe-top: env(safe-area-inset-top, 0px);
-–safe-bottom: env(safe-area-inset-bottom, 0px);
-–safe-left: env(safe-area-inset-left, 0px);
-–safe-right: env(safe-area-inset-right, 0px);
+–green: #5a9a6a;
+–border: rgba(212,174,102,0.14);
+–border-2: rgba(212,174,102,0.28);
+–font-d: ‘Playfair Display’, Georgia, serif;
+–font-b: ‘DM Sans’, sans-serif;
+–font-m: ‘Space Mono’, monospace;
 }
 
-html { scroll-behavior: smooth; background: var(–bg-deep); color: var(–text-primary); font-family: var(–font-body); -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; background: var(–bg-deep); }
-::selection { background: var(–accent); color: var(–bg-deep); }
-a { color: var(–accent); text-decoration: none; transition: color 0.3s; -webkit-tap-highlight-color: transparent; }
-a:hover { color: var(–accent-glow); }
+html { background: var(–bg); color: var(–text); font-family: var(–font-b); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+::selection { background: var(–gold); color: var(–bg); }
 
-/* ═══════════════════════════════════
-NAVIGATION
-═══════════════════════════════════ */
+/* NAV */
 .nav {
-position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-padding: 0 1.25rem; padding-top: var(–safe-top);
-height: calc(60px + var(–safe-top));
-display: flex; align-items: center; justify-content: space-between;
-background: rgba(13,16,21,0.7);
-backdrop-filter: blur(24px) saturate(1.4);
--webkit-backdrop-filter: blur(24px) saturate(1.4);
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+height: 58px; display: flex; align-items: center; justify-content: space-between;
+padding: 0 1.5rem;
+background: rgba(12,15,20,0.8);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
 border-bottom: 1px solid var(–border);
-transition: background 0.4s, box-shadow 0.4s;
 }
-.nav.scrolled { background: rgba(13,16,21,0.92); box-shadow: 0 4px 40px rgba(0,0,0,0.4); }
-.nav-logo { font-family: var(–font-display); font-size: 1.15rem; font-weight: 700; color: var(–text-primary); }
-.nav-logo span { color: var(–accent); }
-
-.nav-links { display: none; gap: 1.75rem; list-style: none; }
-.nav-links a {
-font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-color: var(–text-secondary); position: relative; padding: 0.25rem 0; transition: color 0.3s;
-}
-.nav-links a::after { content: ‘’; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(–accent); transition: width 0.3s ease; }
-.nav-links a:hover, .nav-links a.active { color: var(–text-primary); }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
-.nav-hamburger {
-display: flex; flex-direction: column; gap: 5px; cursor: pointer;
-padding: 0.75rem; z-index: 1001; -webkit-tap-highlight-color: transparent;
-min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
-}
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(–text-primary); transition: all 0.3s; border-radius: 2px; }
-.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-.nav-mobile {
-display: none; position: fixed; inset: 0;
-background: rgba(13,16,21,0.97); backdrop-filter: blur(40px);
-z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2.25rem;
-}
-.nav-mobile.open { display: flex; }
-.nav-mobile a {
-font-family: var(–font-display); font-size: 1.65rem; color: var(–text-primary);
-opacity: 0.7; transition: opacity 0.3s; padding: 0.5rem 1rem;
--webkit-tap-highlight-color: transparent;
-}
-.nav-mobile a:hover, .nav-mobile a:active { opacity: 1; color: var(–accent); }
-
-/* Desktop nav */
-@media (min-width: 769px) {
-.nav { padding: 0 2rem; height: 72px; }
-.nav-links { display: flex; }
-.nav-hamburger { display: none; }
-.nav-logo { font-size: 1.25rem; }
+.nav-logo { font-family: var(–font-d); font-size: 1.05rem; font-weight: 700; }
+.nav-logo em { color: var(–gold); font-style: normal; }
+.nav-tag {
+font-family: var(–font-m); font-size: 0.58rem; letter-spacing: 0.12em;
+text-transform: uppercase; color: var(–gold);
+padding: 0.25rem 0.7rem; border: 1px solid var(–border-2); border-radius: 100px;
+background: rgba(212,174,102,0.07);
 }
 
-/* ═══════════════════════════════════
-HERO — Mobile-first
-═══════════════════════════════════ */
+/* HERO */
 .hero {
-position: relative; min-height: 100vh; min-height: 100dvh;
-display: flex; flex-direction: column; align-items: center; justify-content: center;
-text-align: center; overflow: hidden;
-padding: calc(80px + var(–safe-top)) 1.25rem calc(80px + var(–safe-bottom));
+min-height: 100vh; display: flex; flex-direction: column;
+align-items: center; justify-content: center; text-align: center;
+padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;
 }
-.hero-bg { position: absolute; inset: 0; z-index: 0; }
-.hero-bg::before {
-content: ‘’; position: absolute; inset: 0;
+.hero-bg {
+position: absolute; inset: 0; z-index: 0;
 background:
-radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,174,102,0.12) 0%, transparent 70%),
-radial-gradient(ellipse 60% 50% at 20% 80%, rgba(90,154,106,0.07) 0%, transparent 60%),
-radial-gradient(ellipse 50% 40% at 80% 20%, rgba(74,122,154,0.06) 0%, transparent 50%);
+radial-gradient(ellipse 70% 50% at 50% 30%, rgba(212,174,102,0.1) 0%, transparent 65%),
+radial-gradient(ellipse 50% 40% at 20% 80%, rgba(90,154,106,0.05) 0%, transparent 60%),
+radial-gradient(ellipse 40% 35% at 80% 70%, rgba(199,90,85,0.04) 0%, transparent 55%);
 }
-.hero-bg::after {
-content: ‘’; position: absolute; inset: 0;
-background: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.85’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.03’/%3E%3C/svg%3E”);
-opacity: 0.4;
+.hero-noise {
+position: absolute; inset: 0; z-index: 0; opacity: 0.35;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
 }
-
-.hero-deco { position: absolute; z-index: 0; opacity: 0.05; pointer-events: none; }
-.hero-deco-left { left: -20%; top: 10%; width: 300px; height: 300px; animation: float-deco 12s ease-in-out infinite; }
-.hero-deco-right { right: -20%; bottom: 5%; width: 280px; height: 280px; animation: float-deco 15s ease-in-out infinite reverse; }
-@keyframes float-deco { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(3deg); } }
-
-.hero-particles { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.particle { position: absolute; width: 2px; height: 2px; background: var(–accent); border-radius: 50%; opacity: 0; animation: float-particle 8s infinite; }
-@keyframes float-particle { 0% { opacity: 0; transform: translateY(100vh) scale(0); } 10% { opacity: 0.6; } 90% { opacity: 0.1; } 100% { opacity: 0; transform: translateY(-10vh) scale(1); } }
-
-.hero-content { position: relative; z-index: 1; max-width: 900px; width: 100%; }
-
-.hero-badge {
-display: inline-flex; align-items: center; gap: 0.5rem;
-padding: 0.4rem 1rem; border: 1px solid var(–border-strong); border-radius: 100px;
-font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-color: var(–accent); margin-bottom: 1.5rem; animation: fadeSlideUp 1s 0.2s both;
-background: rgba(212,174,102,0.05);
+.hero-content { position: relative; z-index: 1; max-width: 820px; }
+.hero-eyebrow {
+font-family: var(–font-m); font-size: 0.62rem; letter-spacing: 0.18em;
+text-transform: uppercase; color: var(–text-3); margin-bottom: 1.25rem;
+animation: up 0.8s 0.1s both;
 }
-.hero-badge::before { content: ‘’; width: 5px; height: 5px; border-radius: 50%; background: var(–accent); animation: pulse-dot 2s infinite; flex-shrink: 0; box-shadow: 0 0 8px var(–accent); }
-@keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
-
-.hero-date {
-font-family: var(–font-mono); font-size: 0.7rem; color: var(–text-muted);
-letter-spacing: 0.15em; margin-bottom: 1.25rem; animation: fadeSlideUp 1s 0.4s both;
-}
-
 .hero-title {
-font-family: var(–font-display); font-size: clamp(2.8rem, 12vw, 7rem);
-font-weight: 900; line-height: 0.95; letter-spacing: -0.02em;
-margin-bottom: 1.25rem; animation: fadeSlideUp 1s 0.6s both;
+font-family: var(–font-d); font-size: clamp(3rem, 13vw, 7.5rem);
+font-weight: 900; line-height: 0.92; letter-spacing: -0.02em;
+margin-bottom: 1.5rem; animation: up 0.8s 0.25s both;
 }
-.hero-title .accent { color: var(–accent); text-shadow: 0 0 40px rgba(212,174,102,0.3); }
-.hero-title .italic { font-style: italic; font-weight: 400; color: var(–text-secondary); }
-
-.hero-location {
-display: inline-flex; align-items: center; gap: 0.5rem;
-font-family: var(–font-mono); font-size: 0.75rem; letter-spacing: 0.12em;
-text-transform: uppercase; color: var(–accent);
-padding: 0.35rem 0.9rem; border-radius: 100px;
-background: rgba(212,174,102,0.1); border: 1px solid var(–border-strong);
-margin-bottom: 1.5rem; animation: fadeSlideUp 1s 0.7s both;
+.hero-title .g { color: var(–gold); text-shadow: 0 0 60px rgba(212,174,102,0.25); }
+.hero-title .i { font-style: italic; font-weight: 400; color: var(–text-2); }
+.hero-year {
+display: inline-block; font-family: var(–font-m); font-size: 0.7rem;
+letter-spacing: 0.2em; color: var(–gold);
+padding: 0.35rem 1rem; border: 1px solid var(–border-2); border-radius: 100px;
+background: rgba(212,174,102,0.07); margin-bottom: 2rem;
+animation: up 0.8s 0.35s both;
 }
-.hero-location::before { content: ‘📍’; font-size: 0.9rem; }
-
-.hero-subtitle {
-font-size: 1rem; color: var(–text-secondary); line-height: 1.7;
-max-width: 560px; margin: 0 auto 2.5rem;
-animation: fadeSlideUp 1s 0.8s both; padding: 0 0.5rem;
+.hero-sub {
+font-size: 1.05rem; color: var(–text-2); line-height: 1.75;
+max-width: 520px; margin: 0 auto 3rem;
+animation: up 0.8s 0.45s both;
 }
-.hero-subtitle strong { color: var(–accent); font-weight: 600; }
-
-/* Countdown — Mobile */
-.countdown {
-display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;
-animation: fadeSlideUp 1s 1s both; max-width: 400px; margin: 0 auto;
+.hero-sub strong { color: var(–gold); font-weight: 600; }
+.hero-final {
+display: inline-flex; align-items: center; gap: 0.6rem;
+padding: 0.6rem 1.25rem;
+background: linear-gradient(135deg, rgba(199,90,85,0.15), rgba(199,90,85,0.05));
+border: 1px solid rgba(199,90,85,0.35); border-radius: 14px;
+font-family: var(–font-m); font-size: 0.68rem; letter-spacing: 0.1em;
+text-transform: uppercase; color: #e07a76;
+animation: up 0.8s 0.55s both;
 }
-.countdown-block {
-display: flex; flex-direction: column; align-items: center;
-padding: 0.75rem 0.25rem;
-background: linear-gradient(135deg, var(–bg-card), rgba(212,174,102,0.05));
-border: 1px solid var(–border); border-radius: 12px;
-position: relative; overflow: hidden;
-}
-.countdown-block::before {
-content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-background: linear-gradient(to right, transparent, var(–accent), transparent); opacity: 0.6;
-}
-.countdown-number { font-family: var(–font-mono); font-size: 1.6rem; font-weight: 700; color: var(–accent); line-height: 1; }
-.countdown-label { font-size: 0.55rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(–text-muted); margin-top: 0.35rem; }
-
+.hero-final::before { content: ‘⚑’; font-size: 1rem; }
 .hero-scroll {
-position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
 display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-color: var(–text-muted); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
-animation: fadeSlideUp 1s 1.2s both; cursor: pointer;
--webkit-tap-highlight-color: transparent; padding: 0.5rem;
+color: var(–text-3); font-family: var(–font-m); font-size: 0.55rem;
+letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+animation: up 1s 1s both;
 }
-.hero-scroll-line { width: 1px; height: 30px; background: linear-gradient(to bottom, var(–accent), transparent); animation: scroll-pulse 2s infinite; }
-@keyframes scroll-pulse { 0%,100% { opacity: 1; height: 30px; } 50% { opacity: 0.3; height: 15px; } }
-@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.hero-scroll-line { width: 1px; height: 28px; background: linear-gradient(to bottom, var(–gold), transparent); animation: pulse-line 2s infinite; }
+@keyframes pulse-line { 0%,100%{opacity:1;height:28px} 50%{opacity:0.3;height:14px} }
+@keyframes up { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
 
-/* Desktop hero overrides */
-@media (min-width: 769px) {
-.hero { padding: 2rem; }
-.hero-badge { font-size: 0.75rem; padding: 0.5rem 1.25rem; margin-bottom: 2rem; }
-.hero-date { font-size: 0.9rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
-.hero-location { font-size: 0.8rem; letter-spacing: 0.15em; padding: 0.45rem 1.1rem; margin-bottom: 2rem; }
-.hero-subtitle { font-size: 1.15rem; margin-bottom: 3rem; }
-.countdown { gap: 1rem; max-width: none; }
-.countdown-block { padding: 1.25rem 1rem; border-radius: 16px; min-width: 90px; }
-.countdown-number { font-size: 2.5rem; }
-.countdown-label { font-size: 0.7rem; letter-spacing: 0.15em; margin-top: 0.5rem; }
-.hero-deco-left { left: -5%; width: 500px; height: 500px; }
-.hero-deco-right { right: -8%; width: 450px; height: 450px; }
-.hero-scroll { bottom: 2rem; }
-.hero-scroll-line { height: 40px; }
-}
+/* SECTION BASE */
+.wrap { position: relative; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.06; pointer-events: none; }
+.section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; position: relative; z-index: 1; }
+.divider { max-width: 1100px; margin: 0 auto; height: 1px; background: linear-gradient(to right, transparent, var(–border-2), transparent); position: relative; }
+.divider-dot { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 36px; height: 36px; background: var(–bg); border: 1px solid var(–border-2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+.label { font-family: var(–font-m); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(–gold); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+.label::before { content: ‘’; width: 20px; height: 1px; background: var(–gold); flex-shrink: 0; }
+.heading { font-family: var(–font-d); font-size: clamp(1.6rem, 5vw, 3rem); font-weight: 700; line-height: 1.1; margin-bottom: 0.9rem; }
+.desc { font-size: 0.95rem; color: var(–text-2); line-height: 1.8; max-width: 600px; margin-bottom: 2rem; }
+.desc strong { color: var(–gold); font-weight: 600; }
 
-/* ═══════════════════════════════════
-STATS BANNER
-═══════════════════════════════════ */
-.stats-banner {
-display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
-max-width: 1200px; margin: -2rem auto 0;
-padding: 0 1.25rem; position: relative; z-index: 2;
-}
-.stat-card {
-background: linear-gradient(135deg, var(–bg-card), rgba(212,174,102,0.04));
-border: 1px solid var(–border); border-radius: 16px;
-padding: 1.25rem 1rem; text-align: center;
-position: relative; overflow: hidden;
-box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-.stat-card::before {
-content: ‘’; position: absolute; top: 0; left: 20%; right: 20%; height: 2px;
-background: linear-gradient(to right, transparent, var(–accent), transparent); opacity: 0.5;
-}
-.stat-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
-.stat-number { font-family: var(–font-display); font-size: 1.5rem; font-weight: 900; color: var(–accent); line-height: 1; }
-.stat-label { font-size: 0.7rem; color: var(–text-muted); margin-top: 0.2rem; }
+/* REVEAL */
+.r { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.r.on { opacity: 1; transform: none; }
+.r1 { transition-delay: 0.1s; }
+.r2 { transition-delay: 0.2s; }
+.r3 { transition-delay: 0.3s; }
+.r4 { transition-delay: 0.4s; }
 
-@media (min-width: 769px) {
-.stats-banner { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: -3rem; padding: 0 2rem; }
-.stat-card { padding: 2rem; border-radius: 20px; }
-.stat-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-.stat-number { font-size: 2rem; }
-.stat-label { font-size: 0.8rem; }
-}
-
-/* ═══════════════════════════════════
-SECTION COMMONS
-═══════════════════════════════════ */
-.section-wrap { position: relative; overflow: hidden; }
-.section-wrap .section-blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.07; pointer-events: none; z-index: 0; }
-.section {
-padding: 4rem 1.25rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
-}
-.section-label {
-font-family: var(–font-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
-color: var(–accent); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem;
-}
-.section-label::before { content: ‘’; width: 24px; height: 1px; background: var(–accent); }
-.section-title {
-font-family: var(–font-display); font-size: clamp(1.75rem, 6vw, 3.5rem);
-font-weight: 700; line-height: 1.1; margin-bottom: 1rem;
-}
-.section-desc { font-size: 0.95rem; line-height: 1.8; color: var(–text-secondary); max-width: 640px; margin-bottom: 2.5rem; }
-.section-desc strong { color: var(–accent); font-weight: 600; }
-.section-illus { display: none; }
-
-.divider { width: 100%; max-width: 1200px; margin: 0 auto; height: 1px; position: relative; background: linear-gradient(to right, transparent, var(–border-strong), transparent); }
-.divider-icon {
-position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-width: 40px; height: 40px; background: var(–bg-deep);
-display: flex; align-items: center; justify-content: center;
-font-size: 1rem; border: 1px solid var(–border); border-radius: 50%;
-}
-
-@media (min-width: 769px) {
-.section { padding: 8rem 2rem; }
-.section-label { font-size: 0.75rem; letter-spacing: 0.2em; gap: 1rem; }
-.section-label::before { width: 40px; }
-.section-title { margin-bottom: 1.5rem; }
-.section-desc { font-size: 1.05rem; margin-bottom: 3rem; }
-.section-illus { display: block; position: absolute; right: 2rem; top: 6rem; opacity: 0.05; z-index: 0; pointer-events: none; }
-.divider-icon { width: 44px; height: 44px; font-size: 1.1rem; }
-}
-
-/* ═══════════════════════════════════
-LOCATIE
-═══════════════════════════════════ */
-.locatie-wrap { background: linear-gradient(180deg, var(–bg-deep) 0%, #11140f 30%, #11140f 70%, var(–bg-deep) 100%); }
-
-.locatie-grid { display: flex; flex-direction: column; gap: 1.5rem; }
-.locatie-reveal {
-padding: 1.75rem; background: var(–bg-card); border: 1px solid var(–border); border-radius: 20px;
-position: relative; overflow: hidden;
-box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-}
-.locatie-reveal::before {
-content: ‘’; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
-background: radial-gradient(circle at center, rgba(212,174,102,0.06) 0%, transparent 50%);
-animation: rotate-slow 20s linear infinite;
-}
-@keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.locatie-reveal::after {
-content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(to right, var(–accent-dark), var(–accent), var(–accent-dark));
-border-radius: 20px 20px 0 0;
-}
-.locatie-reveal-content { position: relative; z-index: 1; }
-.locatie-reveal h3 { font-family: var(–font-display); font-size: 1.3rem; margin-bottom: 0.75rem; }
-.locatie-reveal p { color: var(–text-secondary); line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
-.locatie-reveal p strong { color: var(–text-primary); font-weight: 600; }
-.locatie-reveal p em { color: var(–text-muted); font-style: italic; }
-.locatie-reveal .hint {
-font-family: var(–font-mono); font-size: 0.8rem; color: var(–accent);
-padding: 0.875rem 1.25rem; background: rgba(212,174,102,0.07);
-border: 1px dashed var(–border-strong); border-radius: 10px; margin-top: 1rem;
-}
-
-.locatie-features { display: flex; flex-direction: column; gap: 0.75rem; }
-.locatie-feature {
-padding: 1.25rem 1.25rem; background: var(–bg-card); border: 1px solid var(–border);
-border-radius: 14px; display: flex; align-items: center; gap: 1rem;
-transition: background 0.3s, border-color 0.3s, transform 0.3s;
-}
-.locatie-feature:hover { background: var(–bg-card-hover); border-color: var(–border-strong); transform: translateX(4px); }
-.locatie-feature-icon {
-width: 44px; height: 44px; border-radius: 10px; background: rgba(212,174,102,0.1);
-display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
-}
-.locatie-feature h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
-.locatie-feature p { font-size: 0.8rem; color: var(–text-muted); }
-
-@media (min-width: 769px) {
-.locatie-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-.locatie-reveal { padding: 3rem; border-radius: 24px; }
-.locatie-reveal h3 { font-size: 1.5rem; }
-.locatie-reveal .hint { font-size: 0.85rem; padding: 1rem 1.5rem; }
-.locatie-feature { padding: 1.5rem 2rem; border-radius: 16px; gap: 1.25rem; }
-.locatie-feature-icon { width: 48px; height: 48px; font-size: 1.4rem; }
-.locatie-feature h4 { font-size: 1rem; }
-.locatie-feature p { font-size: 0.85rem; }
-}
-
-/* ═══════════════════════════════════
-PLANNING
-═══════════════════════════════════ */
-.planning-wrap { background: linear-gradient(180deg, var(–bg-deep) 0%, #131217 30%, #131217 70%, var(–bg-deep) 100%); }
-
-.planning-timeline { display: flex; flex-direction: column; gap: 2.5rem; }
-
-.planning-day-header {
-display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
-}
-.planning-day-badge {
-display: flex; align-items: center; justify-content: center;
-width: 44px; height: 44px; border-radius: 12px;
-background: rgba(212,174,102,0.1); border: 1px solid var(–border-strong);
-font-family: var(–font-display); font-size: 1.4rem; font-weight: 900; color: var(–accent);
-flex-shrink: 0;
-}
-.planning-day-info { }
-.planning-day-title { font-family: var(–font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.2; }
-.planning-day-label { font-family: var(–font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(–text-muted); margin-top: 0.15rem; }
-
-.planning-items { display: flex; flex-direction: column; gap: 0.6rem; }
-.planning-item {
-padding: 1rem 1.25rem; background: var(–bg-card); border: 1px solid var(–border);
-border-radius: 12px; display: flex; flex-direction: column; gap: 0.3rem;
-position: relative; overflow: hidden;
-}
-.planning-item::before {
-content: ‘’; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-background: linear-gradient(to bottom, var(–accent), transparent); border-radius: 12px 0 0 12px;
-}
-.planning-item-time {
-font-family: var(–font-mono); font-size: 0.7rem; color: var(–accent);
-letter-spacing: 0.05em;
-}
-.planning-item-text { font-size: 0.9rem; color: var(–text-secondary); line-height: 1.5; }
-.planning-item-text strong { color: var(–text-primary); font-weight: 600; }
-
-.planning-item-highlight {
-background: linear-gradient(135deg, rgba(212,174,102,0.1), var(–bg-card));
-border-color: var(–border-strong);
-box-shadow: 0 0 20px rgba(212,174,102,0.08);
-}
-.planning-item-highlight::before {
-width: 4px;
-background: linear-gradient(to bottom, var(–accent-glow), var(–accent));
-}
-.planning-item-highlight .planning-item-time { color: var(–accent-glow); font-weight: 700; }
-.planning-item-tag {
-display: inline-block; font-family: var(–font-mono); font-size: 0.55rem;
-letter-spacing: 0.1em; text-transform: uppercase; color: var(–bg-deep);
-background: var(–accent); padding: 0.2rem 0.55rem; border-radius: 100px;
-margin-left: 0.5rem; vertical-align: middle; font-weight: 700;
-}
-
-/* Desktop planning */
-@media (min-width: 769px) {
-.planning-timeline { gap: 0; position: relative; }
-.planning-timeline::before {
-content: ‘’; position: absolute; left: 140px; top: 0; bottom: 0; width: 1px;
-background: linear-gradient(to bottom, transparent, var(–border-strong), var(–border-strong), transparent);
-}
-.planning-day { margin-bottom: 3rem; }
-.planning-day-header { gap: 2rem; margin-bottom: 1.5rem; }
-.planning-day-badge {
-width: 120px; height: auto; border-radius: 0; background: none; border: none;
-flex-direction: column; text-align: right; font-size: 2.5rem;
-}
-.planning-day-badge::after {
-content: ‘’; width: 14px; height: 14px; border-radius: 50%;
-border: 2px solid var(–accent); background: var(–bg-deep);
-box-shadow: 0 0 12px rgba(212,174,102,0.4);
-position: absolute; left: 134px;
-}
-.planning-day-info { }
-.planning-day-title { font-size: 1.3rem; }
-.planning-day-label { font-size: 0.7rem; letter-spacing: 0.15em; }
-.planning-items { margin-left: 160px; padding-left: 2rem; gap: 0.75rem; }
-.planning-item {
-padding: 1.25rem 1.75rem; border-radius: 14px;
-flex-direction: row; align-items: center; gap: 1.25rem;
-}
-.planning-item-time { min-width: 60px; flex-shrink: 0; font-size: 0.8rem; }
-.planning-item-text { font-size: 0.95rem; }
-.planning-item-tag { font-size: 0.6rem; padding: 0.25rem 0.65rem; }
-}
-
-/* ═══════════════════════════════════
-PUNTEN — NIEUWE SECTIE
-═══════════════════════════════════ */
-.punten-wrap {
-background: linear-gradient(180deg, var(–bg-deep) 0%, #14110d 25%, #181410 50%, #14110d 75%, var(–bg-deep) 100%);
-position: relative;
-}
-
-.punten-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1rem;
-margin-bottom: 2rem;
-}
-
-.punten-card {
-position: relative;
-background: linear-gradient(140deg, var(–bg-card-elevated) 0%, var(–bg-card) 100%);
-border: 1px solid var(–border);
-border-radius: 20px;
-padding: 1.75rem 1.5rem;
-overflow: hidden;
-transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-}
-.punten-card:hover {
-transform: translateY(-4px);
-border-color: var(–border-strong);
-box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(212,174,102,0.08);
-}
-
-.punten-card::before {
-content: ‘’;
-position: absolute;
-top: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(to right, transparent, var(–accent), transparent);
-opacity: 0.7;
-}
-
-/* Decoratieve grote letter achtergrond */
-.punten-card-bignum {
-position: absolute;
-top: -1rem; right: -0.5rem;
-font-family: var(–font-display);
-font-size: 9rem;
-font-weight: 900;
-font-style: italic;
-color: var(–accent);
-opacity: 0.05;
-line-height: 1;
-pointer-events: none;
-user-select: none;
-}
-
-.punten-card-header {
-display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;
-position: relative; z-index: 1;
-}
-.punten-card-icon {
-width: 52px; height: 52px;
-border-radius: 14px;
-background: linear-gradient(135deg, rgba(212,174,102,0.15), rgba(212,174,102,0.05));
-border: 1px solid var(–border-strong);
-display: flex; align-items: center; justify-content: center;
-font-size: 1.5rem; flex-shrink: 0;
-box-shadow: 0 0 20px rgba(212,174,102,0.1);
-}
-.punten-card-tag {
-font-family: var(–font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
-text-transform: uppercase; color: var(–accent); margin-bottom: 0.3rem;
-}
-.punten-card-title {
-font-family: var(–font-display); font-size: 1.3rem; font-weight: 700;
-line-height: 1.2; color: var(–text-primary);
-}
-
-.punten-card-body {
-position: relative; z-index: 1;
-font-size: 0.92rem; color: var(–text-secondary); line-height: 1.7;
-margin-bottom: 1.25rem;
-}
-.punten-card-body strong { color: var(–text-primary); font-weight: 600; }
-.punten-card-body em { color: var(–accent); font-style: italic; }
-
-/* Podium voor punten per plek */
-.punten-podium {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 0.5rem;
-position: relative; z-index: 1;
-}
-.punten-podium-spot {
-display: flex; flex-direction: column; align-items: center; justify-content: center;
-padding: 0.85rem 0.5rem;
-border-radius: 10px;
-background: rgba(255,255,255,0.02);
-border: 1px solid var(–border);
-text-align: center;
-position: relative;
-overflow: hidden;
-}
-.punten-podium-spot.gold {
-background: linear-gradient(135deg, rgba(212,174,102,0.18), rgba(212,174,102,0.04));
-border-color: var(–accent);
-box-shadow: 0 0 15px rgba(212,174,102,0.15);
-}
-.punten-podium-spot.silver {
-background: linear-gradient(135deg, rgba(176,176,176,0.1), rgba(176,176,176,0.02));
-border-color: rgba(176,176,176,0.3);
-}
-.punten-podium-spot.bronze {
-background: linear-gradient(135deg, rgba(160,120,90,0.1), rgba(160,120,90,0.02));
-border-color: rgba(160,120,90,0.3);
-}
-.punten-podium-place {
-font-family: var(–font-mono); font-size: 0.55rem;
-letter-spacing: 0.1em; text-transform: uppercase;
-color: var(–text-muted); margin-bottom: 0.25rem;
-}
-.punten-podium-spot.gold .punten-podium-place { color: var(–accent); }
-.punten-podium-points {
-font-family: var(–font-display); font-size: 1.6rem; font-weight: 900;
-color: var(–text-primary); line-height: 1;
-}
-.punten-podium-spot.gold .punten-podium-points { color: var(–accent); text-shadow: 0 0 12px rgba(212,174,102,0.4); }
-.punten-podium-label {
-font-size: 0.6rem; color: var(–text-muted);
-margin-top: 0.2rem;
-}
-
-/* Single-prize variant: één grote prijs ipv podium */
-.punten-prize-single {
+/* SCOREBOARD */
+.score-wrap { background: linear-gradient(180deg, var(–bg) 0%, #0f1219 40%, #0f1219 60%, var(–bg) 100%); }
+.podium { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2.5rem; }
+.podium-item {
 display: flex; align-items: center; gap: 1rem;
-padding: 1rem 1.25rem;
-border-radius: 12px;
-background: linear-gradient(135deg, rgba(212,174,102,0.15), rgba(212,174,102,0.04));
-border: 1px solid var(–accent);
-position: relative; z-index: 1;
-box-shadow: 0 0 20px rgba(212,174,102,0.1);
+padding: 1.1rem 1.4rem;
+background: var(–bg-card); border: 1px solid var(–border);
+border-radius: 14px; position: relative; overflow: hidden;
+transition: transform 0.3s, border-color 0.3s;
 }
-.punten-prize-single-num {
-font-family: var(–font-display); font-size: 2.4rem; font-weight: 900;
-color: var(–accent); line-height: 1;
-text-shadow: 0 0 15px rgba(212,174,102,0.4);
+.podium-item:hover { transform: translateX(4px); border-color: var(–border-2); }
+.podium-item::before { content: ‘’; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 14px 0 0 14px; }
+.podium-item.p1 { background: linear-gradient(135deg, rgba(212,174,102,0.12), var(–bg-card)); border-color: var(–gold); box-shadow: 0 0 30px rgba(212,174,102,0.08); }
+.podium-item.p1::before { background: var(–gold); width: 4px; }
+.podium-item.p2::before { background: #b0b0b0; opacity: 0.5; }
+.podium-item.p3::before { background: #a0785a; opacity: 0.5; }
+.podium-item.lul { background: linear-gradient(135deg, rgba(199,90,85,0.08), var(–bg-card)); border-color: rgba(199,90,85,0.2); }
+.podium-item.lul::before { background: var(–red); opacity: 0.6; }
+.podium-rank { font-family: var(–font-d); font-size: 1.5rem; font-weight: 900; min-width: 32px; line-height: 1; }
+.p1 .podium-rank { color: var(–gold); }
+.p2 .podium-rank { color: #b0b0b0; }
+.p3 .podium-rank { color: #a0785a; }
+.lul .podium-rank { color: var(–red); opacity: 0.7; }
+.podium-info { flex: 1; }
+.podium-name { font-family: var(–font-d); font-size: 1rem; font-weight: 700; }
+.podium-pts { font-family: var(–font-m); font-size: 0.68rem; color: var(–text-3); margin-top: 0.1rem; }
+.p1 .podium-pts { color: var(–gold); opacity: 0.8; }
+.podium-badge {
+font-family: var(–font-m); font-size: 0.55rem; letter-spacing: 0.08em;
+text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 100px; flex-shrink: 0;
 }
-.punten-prize-single-text {
-display: flex; flex-direction: column; gap: 0.15rem;
-}
-.punten-prize-single-text strong {
-font-family: var(–font-display); font-size: 0.95rem; color: var(–text-primary);
-}
-.punten-prize-single-text span {
-font-size: 0.75rem; color: var(–text-muted);
-}
+.badge-gold { background: rgba(212,174,102,0.15); color: var(–gold); border: 1px solid var(–border-2); }
+.badge-lul { background: rgba(199,90,85,0.1); color: var(–red); border: 1px solid rgba(199,90,85,0.25); }
+.badge-safe { background: rgba(90,154,106,0.1); color: #7ec48e; border: 1px solid rgba(90,154,106,0.25); }
 
-/* Mystery card — voor “meer punten te halen” */
-.punten-mystery {
-position: relative;
-background: linear-gradient(135deg, rgba(212,174,102,0.06), rgba(20,17,13,0.8));
-border: 1px dashed var(–border-strong);
-border-radius: 20px;
+/* HOOGTEPUNTEN */
+.hoogte-wrap { background: linear-gradient(180deg, var(–bg) 0%, #10120f 40%, #10120f 60%, var(–bg) 100%); }
+.moments-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.moment-card {
+padding: 1.5rem; background: var(–bg-card); border: 1px solid var(–border);
+border-radius: 18px; position: relative; overflow: hidden;
+transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.moment-card:hover { transform: translateY(-3px); border-color: var(–border-2); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+.moment-card::before {
+content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+background: linear-gradient(to right, transparent, var(–gold), transparent); opacity: 0.45;
+}
+.moment-emoji { font-size: 1.75rem; margin-bottom: 0.9rem; display: block; }
+.moment-title { font-family: var(–font-d); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.moment-text { font-size: 0.88rem; color: var(–text-2); line-height: 1.7; }
+.moment-text strong { color: var(–text); font-weight: 600; }
+.moment-text em { color: var(–gold); font-style: italic; }
+.moment-card.featured { background: linear-gradient(135deg, rgba(212,174,102,0.1), var(–bg-card)); border-color: var(–border-2); }
+.moment-card.featured::before { opacity: 0.9; }
+
+/* DE LUL */
+.lul-wrap { background: linear-gradient(180deg, var(–bg) 0%, #130f0f 40%, #130f0f 60%, var(–bg) 100%); }
+.lul-box {
 padding: 2rem 1.75rem;
-text-align: center;
-overflow: hidden;
-}
-.punten-mystery::before {
-content: ‘?’;
-position: absolute;
-top: 50%; left: 50%;
-transform: translate(-50%, -50%);
-font-family: var(–font-display);
-font-size: 18rem;
-font-weight: 900;
-font-style: italic;
-color: var(–accent);
-opacity: 0.04;
-line-height: 1;
-pointer-events: none;
-}
-.punten-mystery-icon {
-display: inline-flex; align-items: center; justify-content: center;
-width: 56px; height: 56px;
-border-radius: 50%;
-background: rgba(212,174,102,0.1);
-border: 1px solid var(–border-strong);
-font-size: 1.6rem;
-margin-bottom: 1rem;
-position: relative; z-index: 1;
-animation: pulse-mystery 3s ease-in-out infinite;
-}
-@keyframes pulse-mystery {
-0%, 100% { box-shadow: 0 0 0 0 rgba(212,174,102,0.3); }
-50% { box-shadow: 0 0 0 12px rgba(212,174,102,0); }
-}
-.punten-mystery-tag {
-font-family: var(–font-mono); font-size: 0.65rem; letter-spacing: 0.15em;
-text-transform: uppercase; color: var(–accent); margin-bottom: 0.5rem;
-position: relative; z-index: 1;
-}
-.punten-mystery h3 {
-font-family: var(–font-display); font-size: 1.4rem; font-weight: 700;
-margin-bottom: 0.75rem; position: relative; z-index: 1;
-}
-.punten-mystery p {
-font-size: 0.9rem; color: var(–text-secondary); line-height: 1.7;
-max-width: 480px; margin: 0 auto;
-position: relative; z-index: 1;
-}
-.punten-mystery p strong { color: var(–accent); font-weight: 600; }
-
-/* Desktop overrides voor Punten */
-@media (min-width: 769px) {
-.punten-grid {
-grid-template-columns: 1fr 1fr;
-gap: 1.5rem;
-margin-bottom: 2.5rem;
-}
-.punten-card { padding: 2.25rem 2rem; border-radius: 24px; }
-.punten-card-bignum { font-size: 12rem; top: -1.5rem; right: -1rem; }
-.punten-card-icon { width: 60px; height: 60px; font-size: 1.75rem; border-radius: 16px; }
-.punten-card-tag { font-size: 0.7rem; letter-spacing: 0.15em; }
-.punten-card-title { font-size: 1.5rem; }
-.punten-card-body { font-size: 0.98rem; margin-bottom: 1.5rem; }
-.punten-podium { gap: 0.75rem; }
-.punten-podium-spot { padding: 1.1rem 0.75rem; border-radius: 12px; }
-.punten-podium-place { font-size: 0.65rem; }
-.punten-podium-points { font-size: 2rem; }
-.punten-podium-label { font-size: 0.65rem; }
-.punten-prize-single { padding: 1.25rem 1.5rem; gap: 1.25rem; border-radius: 14px; }
-.punten-prize-single-num { font-size: 3rem; }
-.punten-prize-single-text strong { font-size: 1.05rem; }
-.punten-prize-single-text span { font-size: 0.8rem; }
-
-.punten-mystery { padding: 2.75rem; border-radius: 24px; }
-.punten-mystery::before { font-size: 24rem; }
-.punten-mystery-icon { width: 64px; height: 64px; font-size: 1.8rem; margin-bottom: 1.25rem; }
-.punten-mystery-tag { font-size: 0.75rem; }
-.punten-mystery h3 { font-size: 1.65rem; }
-.punten-mystery p { font-size: 0.95rem; }
-}
-
-/* ═══════════════════════════════════
-HALL OF FAME
-═══════════════════════════════════ */
-.hof-wrap { background: linear-gradient(180deg, var(–bg-deep) 0%, #0f1311 30%, #0f1311 70%, var(–bg-deep) 100%); }
-
-.hof-intro { text-align: center; margin-bottom: 2.5rem; }
-.hof-intro .section-label { justify-content: center; }
-.hof-intro .section-label::before { display: none; }
-.hof-intro .section-title { margin-left: auto; margin-right: auto; }
-.hof-intro .section-desc { margin-left: auto; margin-right: auto; }
-
-.dinner-cta {
-padding: 1.75rem;
-background: linear-gradient(135deg, rgba(212,174,102,0.12), rgba(212,174,102,0.04));
-border: 1px solid var(–accent);
-border-radius: 20px;
-margin-bottom: 2.5rem;
+background: linear-gradient(135deg, rgba(199,90,85,0.1), rgba(199,90,85,0.03));
+border: 1px solid rgba(199,90,85,0.3); border-radius: 22px;
 position: relative; overflow: hidden;
-box-shadow: 0 0 40px rgba(212,174,102,0.1);
+box-shadow: 0 0 50px rgba(199,90,85,0.07);
 }
-.dinner-cta::before {
+.lul-box::before {
 content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-background: linear-gradient(to right, transparent, var(–accent-glow), transparent);
+background: linear-gradient(to right, transparent, var(–red), transparent);
 }
-.dinner-cta::after {
-content: ‘’; position: absolute; top: -40%; right: -20%; width: 300px; height: 300px;
-background: radial-gradient(circle, rgba(212,174,102,0.14), transparent 60%);
-pointer-events: none;
+.lul-box-bg {
+position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+font-family: var(–font-d); font-size: 16rem; font-weight: 900; font-style: italic;
+color: var(–red); opacity: 0.04; pointer-events: none; white-space: nowrap; line-height: 1;
 }
-.dinner-cta-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 1; }
-.dinner-cta-icon {
-width: 48px; height: 48px; border-radius: 12px;
-background: rgba(212,174,102,0.18); border: 1px solid var(–border-strong);
-display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+.lul-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; position: relative; z-index: 1; }
+.lul-icon {
+width: 52px; height: 52px; border-radius: 14px;
+background: rgba(199,90,85,0.15); border: 1px solid rgba(199,90,85,0.3);
+display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
 }
-.dinner-cta-label {
-font-family: var(–font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
-text-transform: uppercase; color: var(–accent); margin-bottom: 0.35rem;
+.lul-label { font-family: var(–font-m); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(–red); margin-bottom: 0.3rem; }
+.lul-title { font-family: var(–font-d); font-size: 1.25rem; font-weight: 700; color: var(–text); }
+.lul-body { position: relative; z-index: 1; font-size: 0.9rem; color: var(–text-2); line-height: 1.75; }
+.lul-body p + p { margin-top: 0.75rem; }
+.lul-body strong { color: var(–text); font-weight: 600; }
+.lul-body em { color: var(–red); font-style: italic; }
+.lul-names { display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap; position: relative; z-index: 1; }
+.lul-name-badge {
+display: flex; align-items: center; gap: 0.5rem;
+padding: 0.6rem 1rem; border-radius: 12px;
+background: rgba(199,90,85,0.12); border: 1px solid rgba(199,90,85,0.3);
+font-family: var(–font-d); font-size: 1rem; font-weight: 700; color: #e07a76;
 }
-.dinner-cta-title { font-family: var(–font-display); font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(–text-primary); }
-.dinner-cta p { font-size: 0.9rem; color: var(–text-secondary); line-height: 1.7; margin-bottom: 0.6rem; position: relative; z-index: 1; }
-.dinner-cta p:last-child { margin-bottom: 0; }
-.dinner-cta p strong { color: var(–text-primary); font-weight: 600; }
-.dinner-cta p em { color: var(–accent); font-style: italic; }
-.dinner-cta-points { color: var(–accent) !important; font-family: var(–font-mono); font-weight: 700 !important; }
-
-@media (min-width: 769px) {
-.dinner-cta { padding: 2.25rem 2.5rem; border-radius: 24px; margin-bottom: 3rem; }
-.dinner-cta-header { gap: 1.25rem; margin-bottom: 1.25rem; }
-.dinner-cta-icon { width: 56px; height: 56px; font-size: 1.6rem; }
-.dinner-cta-label { font-size: 0.7rem; letter-spacing: 0.15em; }
-.dinner-cta-title { font-size: 1.4rem; }
-.dinner-cta p { font-size: 0.95rem; }
+.lul-name-badge span { font-family: var(–font-m); font-size: 0.6rem; color: var(–text-3); }
+.lul-checklist {
+margin-top: 1.25rem; padding: 1.5rem;
+background: var(–bg-card); border: 1px solid rgba(199,90,85,0.18); border-radius: 18px;
 }
-
-/* Podium */
-.hof-podium {
-display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem;
+.lul-checklist-label {
+font-family: var(–font-m); font-size: 0.6rem; letter-spacing: 0.14em;
+text-transform: uppercase; color: var(–red); margin-bottom: 1rem;
 }
-.hof-podium-item {
-display: flex; align-items: center; gap: 1rem;
-padding: 1.25rem 1.5rem; background: var(–bg-card); border: 1px solid var(–border);
-border-radius: 16px; position: relative; overflow: hidden;
-box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+.lul-checklist-items { display: flex; flex-direction: column; gap: 0.6rem; }
+.lul-check-item {
+font-size: 0.88rem; color: var(–text-2); padding: 0.65rem 1rem;
+background: rgba(199,90,85,0.05); border: 1px solid rgba(199,90,85,0.12);
+border-radius: 10px;
 }
-.hof-podium-item::before {
-content: ‘’; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
-}
-.hof-podium-item.gold { border-color: var(–accent); background: linear-gradient(135deg, rgba(212,174,102,0.12), var(–bg-card)); }
-.hof-podium-item.gold::before { background: var(–accent); }
-.hof-podium-item.silver::before { background: #b0b0b0; opacity: 0.5; }
-.hof-podium-item.bronze::before { background: #a0785a; opacity: 0.5; }
-
-.hof-rank { font-family: var(–font-display); font-size: 2rem; font-weight: 900; line-height: 1; min-width: 36px; }
-.gold .hof-rank { color: var(–accent); }
-.silver .hof-rank { color: #b0b0b0; }
-.bronze .hof-rank { color: #a0785a; }
-.hof-name { font-family: var(–font-display); font-size: 1rem; font-weight: 700; }
-.hof-score { font-family: var(–font-mono); font-size: 0.75rem; color: var(–text-muted); }
-.hof-podium-info { display: flex; flex-direction: column; }
-
-@media (min-width: 769px) {
-.hof-podium { flex-direction: row; justify-content: center; align-items: flex-end; gap: 1rem; margin-bottom: 4rem; }
-.hof-podium-item {
-flex-direction: column; text-align: center; min-width: 160px;
-padding: 2rem 2.5rem; border-radius: 20px 20px 0 0;
-}
-.hof-podium-item::before { display: none; }
-.hof-podium-item::after {
-content: ‘’; position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
-}
-.hof-podium-item.gold { padding: 2.5rem 3rem 3rem; }
-.hof-podium-item.gold::after { background: linear-gradient(to right, transparent, var(–accent), transparent); }
-.hof-podium-item.silver::after { background: linear-gradient(to right, transparent, #b0b0b0, transparent); opacity: 0.4; }
-.hof-podium-item.bronze::after { background: linear-gradient(to right, transparent, #a0785a, transparent); opacity: 0.4; }
-.hof-rank { font-size: 3rem; min-width: auto; margin-bottom: 0.75rem; }
-.gold .hof-rank { font-size: 3.5rem; text-shadow: 0 0 30px rgba(212,174,102,0.4); }
-.hof-name { font-size: 1.1rem; margin-bottom: 0.25rem; }
-}
-
-/* Scoreboard table */
-.hof-table-wrapper {
-background: var(–bg-card); border: 1px solid var(–border); border-radius: 16px;
-overflow-x: auto; -webkit-overflow-scrolling: touch;
-box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-}
-.hof-table { width: 100%; border-collapse: collapse; min-width: 420px; }
-.hof-table thead { background: rgba(212,174,102,0.07); }
-.hof-table th {
-font-family: var(–font-mono); font-size: 0.6rem; font-weight: 700;
-letter-spacing: 0.1em; text-transform: uppercase; color: var(–text-muted);
-padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(–border);
-white-space: nowrap;
-}
-.hof-table td {
-padding: 0.75rem 1rem; font-size: 0.85rem; color: var(–text-secondary);
-border-bottom: 1px solid rgba(212,174,102,0.06); white-space: nowrap;
-}
-.hof-table tbody tr { transition: background 0.2s; }
-.hof-table .rank-cell { font-family: var(–font-mono); font-weight: 700; color: var(–accent); width: 40px; }
-.hof-table .name-cell { font-weight: 600; color: var(–text-primary); }
-.hof-table tbody tr:nth-child(1) .rank-cell { color: var(–accent); }
-.hof-table tbody tr:nth-child(2) .rank-cell { color: #b0b0b0; }
-.hof-table tbody tr:nth-child(3) .rank-cell { color: #a0785a; }
-
-.de-lul-row { background: rgba(199,90,85,0.06); }
-.de-lul-badge {
-display: inline-block; font-family: var(–font-mono); font-size: 0.6rem; font-weight: 700;
-letter-spacing: 0.06em; color: var(–red); padding: 0.2rem 0.5rem;
-border: 1px solid rgba(199,90,85,0.3); border-radius: 100px; background: rgba(199,90,85,0.08);
-white-space: nowrap;
-}
-
-.de-lul-explainer {
-display: flex; flex-direction: column; gap: 0.75rem;
-margin-top: 1.5rem; padding: 1.5rem;
-background: linear-gradient(135deg, rgba(199,90,85,0.07), rgba(199,90,85,0.02));
-border: 1px solid rgba(199,90,85,0.2); border-radius: 16px;
-}
-.de-lul-explainer-icon { font-size: 1.75rem; line-height: 1; }
-.de-lul-explainer h4 { font-family: var(–font-display); font-size: 1.05rem; color: var(–red); margin-bottom: 0.25rem; }
-.de-lul-explainer p { font-size: 0.9rem; color: var(–text-secondary); line-height: 1.7; }
-
-@media (min-width: 769px) {
-.hof-intro { margin-bottom: 4rem; }
-.hof-table-wrapper { border-radius: 20px; overflow: hidden; }
-.hof-table { min-width: auto; }
-.hof-table th { font-size: 0.7rem; letter-spacing: 0.12em; padding: 1rem 1.5rem; }
-.hof-table td { padding: 1rem 1.5rem; font-size: 0.9rem; }
-.hof-table .rank-cell { width: 60px; }
-.de-lul-badge { font-size: 0.7rem; padding: 0.3rem 0.75rem; }
-.de-lul-explainer { flex-direction: row; align-items: flex-start; gap: 1.25rem; padding: 2rem 2.5rem; border-radius: 20px; margin-top: 2rem; }
-.de-lul-explainer h4 { font-size: 1.15rem; }
-.de-lul-explainer p { font-size: 0.95rem; }
-}
-
-/* ═══════════════════════════════════
-YOUTUBE / AIRBNB LINK
-═══════════════════════════════════ */
-.yt-link {
-display: flex; align-items: center; gap: 1rem;
-margin-top: 0.75rem; padding: 1rem 1.25rem;
-background: rgba(212,174,102,0.07); border: 1px solid var(–border-strong);
-border-radius: 12px; text-decoration: none;
-transition: background 0.3s, border-color 0.3s, transform 0.3s;
--webkit-tap-highlight-color: transparent;
-}
-.yt-link:first-of-type { margin-top: 1.5rem; }
-.yt-link:hover, .yt-link:active {
-background: rgba(212,174,102,0.14); border-color: var(–accent);
-transform: translateY(-2px);
-}
-.yt-link-play {
-display: flex; align-items: center; justify-content: center;
-width: 44px; height: 44px; border-radius: 50%;
-background: var(–accent); color: var(–bg-deep);
-font-size: 1rem; flex-shrink: 0;
-box-shadow: 0 0 20px rgba(212,174,102,0.3);
-}
-.yt-link-text { display: flex; flex-direction: column; }
-.yt-link-text strong { font-family: var(–font-display); font-size: 0.95rem; color: var(–text-primary); }
-.yt-link-text span { font-size: 0.75rem; color: var(–accent); margin-top: 0.15rem; }
-
-/* ═══════════════════════════════════
-NOTICE BANNER
-═══════════════════════════════════ */
-.notice-banner {
-max-width: 1200px; margin: 2.5rem auto 0; padding: 0 1.25rem;
-position: relative; z-index: 2;
-}
-.notice-banner-inner {
+.safe-card {
+padding: 1.5rem; margin-top: 1.5rem;
+background: linear-gradient(135deg, rgba(90,154,106,0.1), rgba(90,154,106,0.02));
+border: 1px solid rgba(90,154,106,0.25); border-radius: 18px;
 display: flex; align-items: flex-start; gap: 1rem;
-padding: 1.25rem 1.5rem;
-background: linear-gradient(135deg, rgba(212,174,102,0.07), rgba(212,174,102,0.02));
-border: 1px solid var(–border-strong); border-radius: 16px;
-border-left: 4px solid var(–accent);
-}
-.notice-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.3; }
-.notice-text strong {
-display: block; font-family: var(–font-display); font-size: 0.95rem;
-color: var(–text-primary); margin-bottom: 0.25rem;
-}
-.notice-text p { font-size: 0.85rem; color: var(–text-secondary); line-height: 1.6; margin: 0; }
-
-@media (min-width: 769px) {
-.notice-banner { padding: 0 2rem; margin-top: 3rem; }
-.notice-banner-inner { padding: 1.5rem 2rem; border-radius: 20px; }
-.notice-text strong { font-size: 1rem; }
-.notice-text p { font-size: 0.9rem; }
-}
-
-/* ═══════════════════════════════════
-FOOTER
-═══════════════════════════════════ */
-.footer {
-padding: 3rem 1.25rem; padding-bottom: calc(3rem + var(–safe-bottom));
-text-align: center; border-top: 1px solid var(–border);
 position: relative; overflow: hidden;
 }
+.safe-card::before {
+content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+background: linear-gradient(to right, transparent, #5a9a6a, transparent);
+}
+.safe-card-icon {
+width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+background: rgba(90,154,106,0.15); border: 1px solid rgba(90,154,106,0.3);
+display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+.safe-card-text { font-size: 0.88rem; color: var(–text-2); line-height: 1.7; }
+.safe-card-text strong { color: #7ec48e; font-weight: 600; }
+.safe-card-text .name { font-family: var(–font-d); font-size: 0.95rem; font-weight: 700; color: var(–text); display: block; margin-bottom: 0.3rem; }
+
+/* AFSLUITING */
+.outro-wrap { background: linear-gradient(180deg, var(–bg) 0%, #0d1110 50%, var(–bg) 100%); }
+.outro-center { text-align: center; }
+.outro-center .label { justify-content: center; }
+.outro-center .label::before { display: none; }
+.outro-quote {
+max-width: 560px; margin: 0 auto 2.5rem;
+font-family: var(–font-d); font-size: 1.15rem; font-style: italic;
+color: var(–text-2); line-height: 1.75; position: relative; padding: 0 1rem;
+}
+.outro-quote::before { content: ‘”’; font-size: 4rem; color: var(–gold); opacity: 0.2; position: absolute; top: -1.25rem; left: 0; line-height: 1; }
+.outro-stats {
+display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+max-width: 480px; margin: 0 auto 3rem;
+}
+.outro-stat {
+padding: 1.25rem 1rem; background: var(–bg-card); border: 1px solid var(–border);
+border-radius: 16px; text-align: center; position: relative; overflow: hidden;
+}
+.outro-stat::before { content: ‘’; position: absolute; top: 0; left: 20%; right: 20%; height: 1.5px; background: linear-gradient(to right, transparent, var(–gold), transparent); opacity: 0.5; }
+.outro-stat-num { font-family: var(–font-d); font-size: 1.6rem; font-weight: 900; color: var(–gold); line-height: 1; }
+.outro-stat-label { font-size: 0.68rem; color: var(–text-3); margin-top: 0.25rem; }
+.outro-next {
+display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+padding: 1.75rem 2rem;
+background: linear-gradient(135deg, rgba(212,174,102,0.1), rgba(212,174,102,0.03));
+border: 1px solid var(–border-2); border-radius: 20px;
+max-width: 480px; margin: 0 auto;
+}
+.outro-next-label { font-family: var(–font-m); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(–gold); }
+.outro-next-text { font-family: var(–font-d); font-size: 1.1rem; font-weight: 700; color: var(–text); text-align: center; }
+.outro-next-sub { font-size: 0.83rem; color: var(–text-2); text-align: center; line-height: 1.7; }
+.outro-next-sub em { color: var(–red); font-style: italic; }
+
+/* FOOTER */
+.footer { padding: 3rem 1.5rem; text-align: center; border-top: 1px solid var(–border); position: relative; }
 .footer::before {
-content: ‘’; position: absolute; bottom: -50%; left: 50%; transform: translateX(-50%);
-width: 400px; height: 200px; border-radius: 50%;
+content: ‘’; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+width: 300px; height: 150px; border-radius: 50%;
 background: radial-gradient(ellipse, rgba(212,174,102,0.05), transparent); pointer-events: none;
 }
-.footer-logo { font-family: var(–font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
-.footer-logo span { color: var(–accent); }
-.footer-text { font-size: 0.75rem; color: var(–text-muted); line-height: 1.7; }
+.footer-logo { font-family: var(–font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.footer-logo em { color: var(–gold); font-style: normal; }
+.footer-text { font-size: 0.72rem; color: var(–text-3); line-height: 1.7; }
 
-@media (min-width: 769px) {
-.footer { padding: 4rem 2rem; }
-.footer-logo { font-size: 1.5rem; }
-.footer-text { font-size: 0.8rem; }
+/* RESPONSIVE */
+@media (min-width: 600px) {
+.moments-grid { grid-template-columns: 1fr 1fr; }
+.outro-stats { grid-template-columns: repeat(4, 1fr); max-width: 100%; }
 }
-
-/* ═══════════════════════════════════
-ANIMATIONS
-═══════════════════════════════════ */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
+@media (min-width: 900px) {
+.section { padding: 7rem 2rem; }
+.podium-item { padding: 1.35rem 2rem; border-radius: 16px; }
+.podium-rank { font-size: 2rem; min-width: 40px; }
+.podium-name { font-size: 1.1rem; }
+.moment-card { padding: 2rem; }
+.lul-box { padding: 2.75rem; border-radius: 26px; }
+.lul-title { font-size: 1.5rem; }
+}
 </style>
 
 </head>
@@ -930,357 +332,271 @@ ANIMATIONS
 
 <!-- NAV -->
 
-<nav class="nav" id="nav">
-  <div class="nav-logo">Zwieneboer<span>'n</span></div>
-  <ul class="nav-links">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#locatie">Locatie</a></li>
-    <li><a href="#planning">Planning</a></li>
-    <li><a href="#punten">Punten</a></li>
-    <li><a href="#halloffame">Hall of Fame</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+<nav class="nav">
+  <div class="nav-logo">Zwieneboer<em>'n</em></div>
+  <div class="nav-tag">Editie 2026 — Afgelopen</div>
 </nav>
-<div class="nav-mobile" id="mobileMenu">
-  <a href="#home" onclick="toggleMenu()">Home</a>
-  <a href="#locatie" onclick="toggleMenu()">Locatie</a>
-  <a href="#planning" onclick="toggleMenu()">Planning</a>
-  <a href="#punten" onclick="toggleMenu()">Punten</a>
-  <a href="#halloffame" onclick="toggleMenu()">Hall of Fame</a>
-</div>
 
 <!-- HERO -->
 
-<section class="hero" id="home">
-  <div class="hero-bg"><div class="hero-particles" id="particles"></div></div>
-  <svg class="hero-deco hero-deco-left" viewBox="0 0 400 400" fill="none"><circle cx="200" cy="200" r="180" stroke="var(--accent)" stroke-width=".5"/><circle cx="200" cy="200" r="140" stroke="var(--accent)" stroke-width=".3"/><circle cx="200" cy="200" r="100" stroke="var(--accent)" stroke-width=".3"/><line x1="20" y1="200" x2="380" y2="200" stroke="var(--accent)" stroke-width=".3"/><line x1="200" y1="20" x2="200" y2="380" stroke="var(--accent)" stroke-width=".3"/><path d="M200 60 L340 200 L200 340 L60 200Z" stroke="var(--accent)" stroke-width=".5" fill="none"/></svg>
-  <svg class="hero-deco hero-deco-right" viewBox="0 0 400 400" fill="none"><rect x="60" y="60" width="280" height="280" rx="20" stroke="var(--accent)" stroke-width=".5"/><rect x="100" y="100" width="200" height="200" rx="10" stroke="var(--accent)" stroke-width=".3"/><circle cx="200" cy="200" r="60" stroke="var(--accent)" stroke-width=".5"/><circle cx="200" cy="200" r="30" stroke="var(--accent)" stroke-width=".3" fill="var(--accent)" fill-opacity=".05"/></svg>
-
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
   <div class="hero-content">
-    <div class="hero-badge">Editie 2026 &middot; 1 t/m 3 mei</div>
-    <div class="hero-date">01 &middot; 05 &middot; 2026 &nbsp;&mdash;&nbsp; 03 &middot; 05 &middot; 2026</div>
-    <h1 class="hero-title">Zwieneboer<span class="accent">'n</span><br><span class="italic">Weekend</span></h1>
-    <div class="hero-location">Heeg · Friesland</div>
-    <p class="hero-subtitle">Een weekend vol avontuur, pils en sterke verhalen. Dit jaar zetten we koers naar <strong>Heeg</strong> — midden in de Friese meren. De koelkast staat koud. Tot dan!</p>
-    <div class="countdown" id="countdown">
-      <div class="countdown-block"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Dagen</div></div>
-      <div class="countdown-block"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Uren</div></div>
-      <div class="countdown-block"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minuten</div></div>
-      <div class="countdown-block"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconden</div></div>
-    </div>
+    <div class="hero-eyebrow">1 t/m 3 mei 2026 &nbsp;·&nbsp; Heeg, Friesland</div>
+    <h1 class="hero-title">
+      Het <span class="g">Weekend</span><br>
+      <span class="i">is voorbij.</span>
+    </h1>
+    <div class="hero-year">Editie 2026 &nbsp;·&nbsp; Afgerond</div>
+    <p class="hero-sub">
+      Drie dagen Heeg. Eén villa. Tien kloatzakken. Gehaktballen, een golfclub en iets te veel pils later — hier is de eindstand.
+    </p>
+    <div class="hero-final">Het spel is gespeeld. De punten zijn geteld.</div>
   </div>
-  <div class="hero-scroll" onclick="document.getElementById('locatie').scrollIntoView({behavior:'smooth'})"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+  <div class="hero-scroll" onclick="document.getElementById('score').scrollIntoView({behavior:'smooth'})">
+    <span>Eindstand</span>
+    <div class="hero-scroll-line"></div>
+  </div>
 </section>
 
-<!-- STATS -->
+<!-- SCOREBOARD -->
 
-<div class="stats-banner">
-  <div class="stat-card reveal"><span class="stat-icon">🗓️</span><div class="stat-number">3</div><div class="stat-label">Dagen</div></div>
-  <div class="stat-card reveal reveal-delay-1"><span class="stat-icon">👥</span><div class="stat-number">10</div><div class="stat-label">Kloatzakken</div></div>
-  <div class="stat-card reveal reveal-delay-2"><span class="stat-icon">🏡</span><div class="stat-number">1</div><div class="stat-label">Villa</div></div>
-  <div class="stat-card reveal reveal-delay-3"><span class="stat-icon">🍺</span><div class="stat-number">∞</div><div class="stat-label">Pilsjes</div></div>
-</div>
-
-<!-- NOTICE BANNERS -->
-
-<div class="notice-banner reveal">
-  <div class="notice-banner-inner">
-    <span class="notice-icon">🚫</span>
-    <div class="notice-text">
-      <strong>Webshop niet beschikbaar</strong>
-      <p>Door problemen met de leverancier is de webshop helaas offline. Geen kloot'n zin om iets aan te doen dus helaas.</p>
+<div class="wrap score-wrap">
+  <div class="blob" style="width:350px;height:350px;background:rgba(212,174,102,0.5);top:10%;left:-10%"></div>
+  <div class="blob" style="width:280px;height:280px;background:rgba(199,90,85,0.4);bottom:10%;right:-8%"></div>
+  <div class="divider"><div class="divider-dot">🏆</div></div>
+  <section class="section" id="score">
+    <div class="r">
+      <div class="label">Eindstand 2026</div>
+      <h2 class="heading">Het Scorebord</h2>
+      <p class="desc">Na beerpong, Pitch &amp; Putt, gehaktballen en een koude duik in het water — dit is hoe het eindigde.</p>
     </div>
-  </div>
-</div>
-
-<div class="notice-banner reveal">
-  <div class="notice-banner-inner" style="border-left-color: var(--accent-glow);">
-    <span class="notice-icon">🕓</span>
-    <div class="notice-text">
-      <strong>Inchecken vanaf 16:00 — vrijdag 1 mei 2026</strong>
-      <p>Eerder aankomen bij de villa in Heeg heeft geen zin: inchecken kan pas vanaf 16:00. Plan je reis daarop en zorg dat je op tijd bent voor de eerste pils.</p>
-    </div>
-  </div>
-</div>
-
-<!-- LOCATIE -->
-
-<div class="section-wrap locatie-wrap">
-  <div class="section-blob" style="width:400px;height:400px;background:rgba(90,154,106,0.4);top:-10%;left:-15%"></div>
-  <div class="section-blob" style="width:300px;height:300px;background:rgba(212,174,102,0.3);bottom:-15%;right:-10%"></div>
-  <div class="divider"><div class="divider-icon">📍</div></div>
-  <section class="section" id="locatie">
-    <svg class="section-illus" width="300" height="300" viewBox="0 0 300 300" fill="none"><circle cx="150" cy="130" r="80" stroke="var(--accent)" stroke-width="1.5"/><path d="M150 50 L150 30 M150 210 L150 230 M70 130 L50 130 M230 130 L250 130" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="130" r="5" fill="var(--accent)"/><path d="M150 50 L160 130 L150 210 L140 130Z" fill="var(--accent)" fill-opacity=".15" stroke="var(--accent)" stroke-width=".5"/><text x="150" y="270" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">HEEG</text><text x="150" y="285" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent)" letter-spacing="3">FRIESLAND</text></svg>
-    <div class="reveal">
-      <div class="section-label">01 &mdash; De Bestemming</div>
-      <h2 class="section-title">De locatie</h2>
-      <p class="section-desc">De aanwijzingen zijn <strong>niet</strong> gekraakt: Maar dit jaar strijken we neer in <strong>Heeg</strong>, een idyllisch Fries dorp aan het Heegermeer. Zeilboten, water tot aan de horizon, en een complete villa voor ons gereserveerd.</p>
-    </div>
-    <div class="locatie-grid">
-      <div class="locatie-reveal reveal reveal-delay-1">
-        <div class="locatie-reveal-content">
-          <h3>🎉 Onthuld: we gaan naar Heeg</h3>
-          <p>De bestemming is geen geheim meer. Dit jaar strijken we neer in <strong>Heeg</strong>, een prachtig dorp aan het Heegermeer in het hart van Friesland. Zeilboten zover je kunt kijken — en als het weer meezit regelen we zondag nog een moaterboat.</p>
-          <p>Onze uitvalsbasis: een volledig ingerichte <strong>villa aan het water</strong>, op loopafstand van het centrum van Heeg. Alles onder één dak, zodat we ongestoord onze gang kunnen gaan.</p>
-          <p>En zoals Hein Mighelbrink van The Spitfires ooit zei: <em>"Op het water, in de sloot met een moaterboat."</em> Toepasselijker kon het niet.</p>
-          <div class="hint">🏡 Bekijk hieronder de villa waar we verblijven.</div>
-          <a href="https://www.airbnb.nl/rooms/41489826" target="_blank" rel="noopener" class="yt-link">
-            <span class="yt-link-play">🏠</span>
-            <span class="yt-link-text">
-              <strong>Onze villa in Heeg</strong>
-              <span>Bekijk op Airbnb →</span>
-            </span>
-          </a>
-          <a href="https://www.youtube.com/watch?v=rYMbSvDJk5g&t=66s" target="_blank" rel="noopener" class="yt-link">
-            <span class="yt-link-play">▶</span>
-            <span class="yt-link-text">
-              <strong>The Spitfires — thema-song</strong>
-              <span>Bekijk op YouTube →</span>
-            </span>
-          </a>
+    <div class="podium">
+      <div class="podium-item p1 r r1">
+        <div class="podium-rank">1</div>
+        <div class="podium-info">
+          <div class="podium-name">Militair 1</div>
+          <div class="podium-pts">27 punten</div>
+        </div>
+        <div class="podium-badge badge-gold">👑 Kampioen</div>
+      </div>
+      <div class="podium-item p2 r r2">
+        <div class="podium-rank">2</div>
+        <div class="podium-info">
+          <div class="podium-name">Deuin</div>
+          <div class="podium-pts">14 punten</div>
+        </div>
+        <div class="podium-badge badge-safe">🌊 Nat maar veilig</div>
+      </div>
+      <div class="podium-item p3 r r3">
+        <div class="podium-rank">3</div>
+        <div class="podium-info">
+          <div class="podium-name">Den Agrariër</div>
+          <div class="podium-pts">12 punten</div>
         </div>
       </div>
-      <div class="locatie-features reveal reveal-delay-2">
-        <div class="locatie-feature"><div class="locatie-feature-icon">🏡</div><div><h4>Prachtige villa</h4><p>Volledig uitgerust, alle comfort aanwezig</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">⛵</div><div><h4>Aan het Heegermeer</h4><p>Water en zeilboten binnen handbereik</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">🚗</div><div><h4>~1 uur rijden</h4><p>Kop alweer op huus an stoan</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">🍺</div><div><h4>Koelkast staat koud</h4><p>Pils ofsoat</p></div></div>
-        <div class="locatie-feature"><div class="locatie-feature-icon">🤫</div><div><h4>Rustige omgeving</h4><p>Bek hol'n saams</p></div></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- PLANNING -->
-
-<div class="section-wrap planning-wrap">
-  <div class="section-blob" style="width:350px;height:350px;background:rgba(74,122,154,0.35);top:10%;right:-15%"></div>
-  <div class="section-blob" style="width:250px;height:250px;background:rgba(212,174,102,0.2);bottom:5%;left:-10%"></div>
-  <div class="divider"><div class="divider-icon">📋</div></div>
-  <section class="section" id="planning">
-    <svg class="section-illus" width="260" height="300" viewBox="0 0 260 300" fill="none"><rect x="30" y="20" width="200" height="260" rx="16" stroke="var(--accent)" stroke-width="1.5"/><rect x="30" y="20" width="200" height="50" rx="16" fill="var(--accent)" fill-opacity=".06" stroke="var(--accent)" stroke-width="1"/><line x1="70" y1="100" x2="200" y2="100" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="140" x2="200" y2="140" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="180" x2="200" y2="180" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><line x1="70" y1="220" x2="200" y2="220" stroke="var(--accent)" stroke-width=".8" stroke-dasharray="4 4"/><circle cx="52" cy="100" r="6" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="140" r="6" fill="var(--accent)" fill-opacity=".3" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="180" r="6" stroke="var(--accent)" stroke-width="1"/><circle cx="52" cy="220" r="6" stroke="var(--accent)" stroke-width="1"/><text x="130" y="52" text-anchor="middle" font-family="monospace" font-size="11" fill="var(--accent)">MEI 2026</text></svg>
-    <div class="reveal">
-      <div class="section-label">02 &mdash; Het Programma</div>
-      <h2 class="section-title">Planning</h2>
-      <p class="section-desc">We verblijven drie dagen in Heeg, van vrijdagmiddag tot zondagochtend. Inchecken kan vanaf <strong>16:00 op vrijdag 1 mei</strong>. Zaterdag gaan we <strong>Pitch &amp; Putten in Koudum</strong> en dineren bij <strong>Pata Negra in Sneek</strong>. Als het weer meezit, proberen we zondagmiddag nog een boot te regelen.</p>
-    </div>
-    <div class="planning-timeline">
-      <div class="planning-day reveal">
-        <div class="planning-day-header">
-          <div class="planning-day-badge">01</div>
-          <div class="planning-day-info">
-            <div class="planning-day-title">Aankomst & Eerste Avond</div>
-            <div class="planning-day-label">Vrijdag 1 mei</div>
-          </div>
-        </div>
-        <div class="planning-items">
-          <div class="planning-item planning-item-highlight"><div class="planning-item-time">Vanaf 16:00 <span class="planning-item-tag">Inchecken</span></div><div class="planning-item-text"><strong>Inchecken bij de villa in Heeg</strong> — Niet eerder dan 16:00 aankomen. Kamers verdelen, omgeving verkennen en de eerste pils opentrekken.</div></div>
-          <div class="planning-item"><div class="planning-item-time">18:00</div><div class="planning-item-text"><strong>Avondeten</strong> — Samen eten in de villa (verzorgd door de vrijwilligers, zie scorebord 👇)</div></div>
-          <div class="planning-item"><div class="planning-item-time">20:00</div><div class="planning-item-text"><strong>Avondprogramma</strong> — Pils en de eerste punten op het spel.</div></div>
+      <div class="podium-item r r1">
+        <div class="podium-rank" style="color:var(--text-3)">4</div>
+        <div class="podium-info">
+          <div class="podium-name">Zusters</div>
+          <div class="podium-pts">10 punten</div>
         </div>
       </div>
-      <div class="planning-day reveal">
-        <div class="planning-day-header">
-          <div class="planning-day-badge">02</div>
-          <div class="planning-day-info">
-            <div class="planning-day-title">De Volle Dag</div>
-            <div class="planning-day-label">Zaterdag 2 mei</div>
-          </div>
-        </div>
-        <div class="planning-items">
-          <div class="planning-item"><div class="planning-item-time">13:30</div><div class="planning-item-text"><strong>Vertrek vanuit de villa</strong> — Onderweg naar Koudum, ongeveer een half uur rijden</div></div>
-          <div class="planning-item"><div class="planning-item-time">14:00</div><div class="planning-item-text"><strong>Pitch &amp; Putt in Koudum</strong> — Clubje pakken, balletje slaan en kijken wie het meeste golftalent in huis heeft. Handig: neem een zonnebril mee.</div></div>
-          <div class="planning-item"><div class="planning-item-time">19:30</div><div class="planning-item-text"><strong>Diner bij Pata Negra</strong> — Tapas-avond in Sneek. Reservering staat, tafel gedekt.</div></div>
-          <div class="planning-item"><div class="planning-item-time">22:00</div><div class="planning-item-text"><strong>Kroeg</strong> — Pils nuttigen in een of andere stink kroeg</div></div>
+      <div class="podium-item r r2">
+        <div class="podium-rank" style="color:var(--text-3)">5</div>
+        <div class="podium-info">
+          <div class="podium-name">Leipe Linda</div>
+          <div class="podium-pts">10 punten</div>
         </div>
       </div>
-      <div class="planning-day reveal">
-        <div class="planning-day-header">
-          <div class="planning-day-badge">03</div>
-          <div class="planning-day-info">
-            <div class="planning-day-title">De Aftocht</div>
-            <div class="planning-day-label">Zondag 3 mei</div>
-          </div>
+      <div class="podium-item r r3">
+        <div class="podium-rank" style="color:var(--text-3)">6</div>
+        <div class="podium-info">
+          <div class="podium-name">Veerboat</div>
+          <div class="podium-pts">6 punten</div>
         </div>
-        <div class="planning-items">
-          <div class="planning-item"><div class="planning-item-time">11:00</div><div class="planning-item-text"><strong>Uitchecken</strong> — Villa netjes achterlaten en uitchecken. Eventueel nog boat varen.</div></div>
+        <div class="podium-badge badge-safe">😮‍💨 Net vrij</div>
+      </div>
+      <div class="podium-item lul r r1">
+        <div class="podium-rank">7</div>
+        <div class="podium-info">
+          <div class="podium-name">Gunnepilze</div>
+          <div class="podium-pts">4 punten</div>
         </div>
+        <div class="podium-badge badge-lul">⚠️ De Lul</div>
+      </div>
+      <div class="podium-item lul r r2">
+        <div class="podium-rank">8</div>
+        <div class="podium-info">
+          <div class="podium-name">Jager en Verzamelaar</div>
+          <div class="podium-pts">4 punten</div>
+        </div>
+        <div class="podium-badge badge-lul">⚠️ De Lul</div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- PUNTEN — NIEUWE SECTIE -->
+<!-- HOOGTEPUNTEN -->
 
-<div class="section-wrap punten-wrap">
-  <div class="section-blob" style="width:380px;height:380px;background:rgba(212,174,102,0.4);top:5%;left:-12%"></div>
-  <div class="section-blob" style="width:280px;height:280px;background:rgba(74,122,154,0.25);bottom:10%;right:-10%"></div>
-  <div class="divider"><div class="divider-icon">🎯</div></div>
-  <section class="section" id="punten">
-    <div class="reveal">
-      <div class="section-label">03 &mdash; Punten Verdienen</div>
-      <h2 class="section-title">Punten</h2>
-      <p class="section-desc">Tijdens het weekend zijn er volop kansen om <strong>punten bij te schrijven</strong> op het scorebord. De grote brokken: een <strong>beerpong toernooi</strong> in willekeurig samengestelde teams van 2, en het <strong>Pitch &amp; Putt</strong> op zaterdag. Daarnaast komen er gedurende het weekend nog meer mogelijkheden voorbij. Genoeg ruimte dus om te ontsnappen aan de onderste twee plekken — en dus aan het regelen van volgend jaar.</p>
+<div class="wrap hoogte-wrap">
+  <div class="blob" style="width:300px;height:300px;background:rgba(90,154,106,0.4);top:5%;right:-8%"></div>
+  <div class="divider"><div class="divider-dot">✨</div></div>
+  <section class="section" id="hoogte">
+    <div class="r">
+      <div class="label">Terugblik</div>
+      <h2 class="heading">Hoogtepunten</h2>
+      <p class="desc">Wat er in de villa gebeurt, blijft in de villa. Maar sommige dingen zijn te goed om niet te onthouden.</p>
     </div>
+    <div class="moments-grid">
 
 ```
-<div class="punten-grid">
-  <!-- Beerpong card -->
-  <div class="punten-card reveal reveal-delay-1">
-    <div class="punten-card-bignum">01</div>
-    <div class="punten-card-header">
-      <div class="punten-card-icon">🍻</div>
-      <div>
-        <div class="punten-card-tag">Toernooi · Teams van 2</div>
-        <h3 class="punten-card-title">Beerpong Toernooi</h3>
-      </div>
-    </div>
-    <p class="punten-card-body">
-      Het was bijzonder spannend, <strong>maar de punten zijn verdeeld</strong>
-    </p>
-    <div class="punten-podium">
-      <div class="punten-podium-spot gold">
-        <div class="punten-podium-place">Militair 1 & Zusters</div>
-        <div class="punten-podium-points">8</div>
-        <div class="punten-podium-label">punten</div>
-      </div>
-      <div class="punten-podium-spot silver">
-        <div class="punten-podium-place">Deuin & De opperbaas</div>
-        <div class="punten-podium-points">4</div>
-        <div class="punten-podium-label">punten</div>
-      </div>
-      <div class="punten-podium-spot bronze">
-        <div class="punten-podium-place">Veerboat & Den Agrariër</div>
-        <div class="punten-podium-points">2</div>
-        <div class="punten-podium-label">punten</div>
-      </div>
+  <div class="moment-card featured r r1">
+    <span class="moment-emoji">🍖</span>
+    <div class="moment-title">De Gehaktballen van de Militairen</div>
+    <div class="moment-text">
+      Vrijdagavond namen <strong>Militair 1 en Militair 2</strong> het fornuis over en rolden gehaktballen waar je stil van werd. <em>5 punten per man</em>, en een avond die niemand snel vergeet.
     </div>
   </div>
 
-  <!-- Pitch & Putt card -->
-  <div class="punten-card reveal reveal-delay-2">
-    <div class="punten-card-bignum">02</div>
-    <div class="punten-card-header">
-      <div class="punten-card-icon">⛳</div>
-      <div>
-        <div class="punten-card-tag">Zaterdag · Koudum</div>
-        <h3 class="punten-card-title">Pitch &amp; Putt</h3>
-      </div>
-    </div>
-    <p class="punten-card-body">
-      Op zaterdag trekken we naar Koudum voor een potje <strong>Pitch &amp; Putt</strong>. Het winnende team mag <em>8 punten</em> bijschrijven op het scorebord. Een kans om in één klap dichtbij de top te komen — of om te zien dat je swing er na een paar pilsjes echt niet beter op wordt.
-    </p>
-    <div class="punten-prize-single">
-      <div class="punten-prize-single-num">8</div>
-      <div class="punten-prize-single-text">
-        <strong>Punten voor het winnende team</strong>
-        <span>Winnen of niet — that's it</span>
-      </div>
+  <div class="moment-card r r2">
+    <span class="moment-emoji">🏊</span>
+    <div class="moment-title">Deuin duikt het meer in</div>
+    <div class="moment-text">
+      <strong>Deuin</strong> kreeg de kans om voor <em>8 punten</em> de haven in te springen — en hij deed het gewoon. Koud. Nat. Onomkeerbaar. Chapeau.
     </div>
   </div>
-</div>
 
-<!-- Mystery cards -->
-<div class="punten-mystery reveal reveal-delay-3">
-  <div class="punten-mystery-icon">✨</div>
-  <div class="punten-mystery-tag">En verder...</div>
-  <h3>Meer punten</h3>
-  <p>Tijdens het weekend duiken er <strong>constant</strong> mogelijkheden op. <strong>Deuin</strong> die kloatzakke heeft alvast <strong>8 punten</strong> verdiend door in het water te springen</p>
+  <div class="moment-card r r3">
+    <span class="moment-emoji">⛳</span>
+    <div class="moment-title">Pitch &amp; Putt in Koudum</div>
+    <div class="moment-text">
+      Zonnebril op, club in de hand en voor sommigen een diep besef dat golf toch echt een sport is. Na een paar pilsjes was de swing er niet beter op geworden, maar de sfeer des te beter.
+    </div>
+  </div>
+
+  <div class="moment-card r r1">
+    <span class="moment-emoji">🍺</span>
+    <div class="moment-title">Beerpong: Militair 1 &amp; Zusters domineren</div>
+    <div class="moment-text">
+      De tafel stond, de ballen vlogen en <strong>Militair 1 &amp; Zusters</strong> lieten zien hoe het moet. <em>8 punten</em> rijker, terwijl de rest verbaasd toekeek.
+    </div>
+  </div>
+
+
+
+
+
 </div>
 ```
 
   </section>
 </div>
 
-<!-- HALL OF FAME -->
+<!-- DE LUL -->
 
-<div class="section-wrap hof-wrap">
-  <div class="section-blob" style="width:400px;height:400px;background:rgba(212,174,102,0.3);top:5%;left:50%;transform:translateX(-50%)"></div>
-  <div class="section-blob" style="width:250px;height:250px;background:rgba(199,90,85,0.2);bottom:10%;right:-8%"></div>
-  <div class="divider"><div class="divider-icon">🏆</div></div>
-  <section class="section" id="halloffame">
-    <div class="hof-intro reveal">
-      <div class="section-label">04 &mdash; Het Scorebord</div>
-      <h2 class="section-title">Hall of Fame</h2>
-      <p class="section-desc">Dit jaar voor het eerst een scorebord. De onderste twee op het scorebord? Die moeten volgend jaar het Zwieneboer'n Weekend organiseren. Voor en tijdens het weekend zijn punten te verdienen.</p>
+<div class="wrap lul-wrap">
+  <div class="blob" style="width:300px;height:300px;background:rgba(199,90,85,0.5);top:15%;left:-10%"></div>
+  <div class="divider"><div class="divider-dot">⚠️</div></div>
+  <section class="section" id="lul">
+    <div class="r">
+      <div class="label">De uitslag</div>
+      <h2 class="heading">En de organisatoren van 2027 zijn...</h2>
     </div>
 
 ```
-<!-- DINNER POINTS CTA -->
-<div class="dinner-cta reveal">
-  <div class="dinner-cta-header">
-    <div class="dinner-cta-icon">🍽️</div>
+<div class="lul-box r r1">
+  <div class="lul-box-bg">DE LUL</div>
+  <div class="lul-header">
+    <div class="lul-icon">📋</div>
     <div>
-      <div class="dinner-cta-label">Extra punten · Beslist!</div>
-      <h3 class="dinner-cta-title">2× <span class="dinner-cta-points">5 punten</span> voor het avondeten op vrijdag</h3>
+      <div class="lul-label">Volgend jaar organiseren</div>
+      <div class="lul-title">Gefeliciteerd. Jullie mogen het regelen.</div>
     </div>
   </div>
-  <p> Militair 1 en Militair 2 hebben machtig lekkere ballen gedraaid en daarmee:: <strong class="dinner-cta-points">5 punten</strong> op het scorebord verdiend.</p>
-  <p>Daarmee lopen ze al flink uit op de rest van de concurrentie.
+  <div class="lul-body">
+    <p>Met respectievelijk <strong>4 punten</strong> beiden hebben <em>Gunnepilze</em> en <em>Jager en Verzamelaar</em> het onderspit gedolven. Het verschil met de rest was groot genoeg om geen discussie over te laten bestaan.</p>
+    <p>Volgend jaar is het aan jullie: locatie zoeken, villa boeken, programma bedenken, website bouwen, reserveringen regelen — het hele circus. We gaan er vast van genieten.</p>
+    <p>Pro-tip: begin op tijd. En maak misschien wat minder grappige opmerkingen over anderen die ooit moesten organiseren.</p>
+  </div>
+  <div class="lul-names">
+    <div class="lul-name-badge">🏴 Gunnepilze <span>4 pts</span></div>
+    <div class="lul-name-badge">🏴 Jager en Verzamelaar <span>4 pts</span></div>
+  </div>
 </div>
 
-<div class="hof-podium reveal">
-  <div class="hof-podium-item gold"><div class="hof-rank">1</div><div class="hof-podium-info"><div class="hof-name">Militair 1</div><div class="hof-score">23 punten</div></div></div>
-  <div class="hof-podium-item silver"><div class="hof-rank">2</div><div class="hof-podium-info"><div class="hof-name">Deuin</div><div class="hof-score">14 punten</div></div></div>
-  <div class="hof-podium-item bronze"><div class="hof-rank">3</div><div class="hof-podium-info"><div class="hof-name">Den Agragiër</div><div class="hof-score">12 punten</div></div></div>
+<!-- Wat ze moeten doen -->
+<div class="lul-checklist r r2">
+  <div class="lul-checklist-label">Takenlijst 2027</div>
+  <div class="lul-checklist-items">
+    <div class="lul-check-item">📍 Locatie uitzoeken en boeken</div>
+    <div class="lul-check-item">🏡 Villa regelen voor 10 man</div>
+    <div class="lul-check-item">📋 Volledig programma opstellen</div>
+    <div class="lul-check-item">🍽️ Eten en activiteiten regelen</div>
+    <div class="lul-check-item">🌐 Website bouwen</div>
+    <div class="lul-check-item">💸 Kassatekort? Ook jullie probleem.</div>
+  </div>
 </div>
-<div class="hof-table-wrapper reveal">
-  <table class="hof-table">
-    <thead><tr><th>#</th><th>Naam</th><th>Punten</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td class="rank-cell">1</td><td class="name-cell">Militair 1</td><td>23</td><td></td></tr>
-      <tr><td class="rank-cell">2</td><td class="name-cell">Deuin</td><td>14</td><td></td></tr>
-      <tr><td class="rank-cell">3</td><td class="name-cell">Den Agrariër</td><td>12</td><td></td></tr>
-      <tr><td class="rank-cell">4</td><td class="name-cell">Zusters</td><td>10</td><td></td></tr>
-      <tr><td class="rank-cell">5</td><td class="name-cell">Leipe Linda</td><td>10</td><td></td></tr>
-      <tr><td class="rank-cell">6</td><td class="name-cell">Militair 2</td><td>7</td><td></td></tr>
-      <tr><td class="rank-cell">7</td><td class="name-cell">Veerboat</td><td>3</td><td></td></tr>
-      <tr class="de-lul-row"><td class="rank-cell">8</td><td class="name-cell">Jager en verzamelaar</td><td>1</td><td><span class="de-lul-badge">⚠️ DE LUL</span></td></tr>
-      <tr class="de-lul-row"><td class="rank-cell">9</td><td class="name-cell">Gunnepilze</td><td>1</td><td><span class="de-lul-badge">⚠️ DE LUL</span></td></tr>
-    </tbody>
-  </table>
-</div>
-<div class="de-lul-explainer reveal">
-  <div class="de-lul-explainer-icon">⚠️</div>
-  <div>
-    <h4>Wat betekent "DE LUL"?</h4>
-    <p>De twee spelers die onderaan het scorebord eindigen, moeten volgend jaar het Zwieneboer'n Weekend organiseren. Locatie regelen, planning maken, alles uit handen nemen — mooi kloot'n, ik kan het weten.</p>
+
+<div class="safe-card r r2">
+  <div class="safe-card-icon">😮‍💨</div>
+  <div class="safe-card-text">
+    <span class="name">Veerboat — de dans ontsprongen</span>
+    Met <strong>6 punten</strong> eindigde Veerboat net buiten de gevarenzone. <strong>Twee punten</strong> verschil met de onderste twee. Twee. Punten. Volgend jaar gewoon lekker achteroverleunen terwijl anderen zweten over het programma.
   </div>
 </div>
 ```
 
+  </section>
+</div>
+
+<!-- AFSLUITING -->
+
+<div class="wrap outro-wrap">
+  <div class="blob" style="width:350px;height:350px;background:rgba(212,174,102,0.35);top:20%;left:40%;transform:translateX(-50%)"></div>
+  <div class="divider"><div class="divider-dot">🌅</div></div>
+  <section class="section outro-center">
+    <div class="r">
+      <div class="label">Tot volgend jaar</div>
+      <h2 class="heading">Dat was het dan.</h2>
+    </div>
+    <div class="outro-quote r r1">
+      Drie dagen, tien man, één villa aan het Heegermeer. Wat er verder ook gebeurde — de gehaktballen waren subliem en de pils was koud. Meer hoef je eigenlijk niet te weten.
+    </div>
+    <div class="outro-stats r r2">
+      <div class="outro-stat"><div class="outro-stat-num">3</div><div class="outro-stat-label">Dagen</div></div>
+      <div class="outro-stat"><div class="outro-stat-num">10</div><div class="outro-stat-label">Kloatzakken</div></div>
+      <div class="outro-stat"><div class="outro-stat-num">27</div><div class="outro-stat-label">Max punten</div></div>
+      <div class="outro-stat"><div class="outro-stat-num">∞</div><div class="outro-stat-label">Pilsjes</div></div>
+    </div>
+    <div class="outro-next r r3">
+      <div class="outro-next-label">Editie 2027</div>
+      <div class="outro-next-text">Zwieneboer'n Weekend 2027</div>
+      <div class="outro-next-sub">
+        Locatie, datum en programma — volledig in handen van<br>
+        <em>Gunnepilze &amp; Jager en Verzamelaar.</em><br>
+        Succes, jongens. Jullie hebben het verdiend.
+      </div>
+    </div>
   </section>
 </div>
 
 <!-- FOOTER -->
 
 <footer class="footer">
-  <div class="footer-logo">Zwieneboer<span>'n</span> Weekend</div>
-  <p class="footer-text">1 t/m 3 mei 2026 &middot; Heeg, Friesland &middot; 10 vrienden &middot; 1 weekend<br><span style="opacity:.5;margin-top:.5rem;display:inline-block">Wat in de villa gebeurt, blijft in de villa.</span></p>
+  <div class="footer-logo">Zwieneboer<em>'n</em> Weekend 2026</div>
+  <p class="footer-text">
+    Heeg · Friesland · 1 t/m 3 mei 2026<br>
+    <span style="opacity:.4;display:inline-block;margin-top:.35rem">Wat in de villa gebeurt, blijft in de villa.</span>
+  </p>
 </footer>
 
 <script>
-// Countdown
-const td=new Date('2026-05-01T16:00:00+02:00');
-function uc(){const d=td-new Date();if(d<=0){document.getElementById('cd-days').textContent='🎉';document.getElementById('cd-hours').textContent='Het';document.getElementById('cd-mins').textContent='is';document.getElementById('cd-secs').textContent='NU!';return;}const D=Math.floor(d/864e5),H=Math.floor(d/36e5)%24,M=Math.floor(d/6e4)%60,S=Math.floor(d/1e3)%60;document.getElementById('cd-days').textContent=String(D).padStart(2,'0');document.getElementById('cd-hours').textContent=String(H).padStart(2,'0');document.getElementById('cd-mins').textContent=String(M).padStart(2,'0');document.getElementById('cd-secs').textContent=String(S).padStart(2,'0');}
-uc();setInterval(uc,1000);
-
-// Particles (fewer on mobile)
-const isMobile=window.innerWidth<769;
-const pc=document.getElementById('particles');
-for(let i=0;i<(isMobile?18:35);i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*8+'s';p.style.animationDuration=(6+Math.random()*6)+'s';const s=1+Math.random()*2;p.style.width=s+'px';p.style.height=s+'px';pc.appendChild(p);}
-
-// Nav scroll
-const nav=document.getElementById('nav'),secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
-let ticking=false;
-window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{nav.classList.toggle('scrolled',window.scrollY>60);let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-200)c=s.id;});nls.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+c));ticking=false;});ticking=true;}},{passive:true});
-
-// Mobile menu
-function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
-
-// Scroll reveal
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.07, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
 </script>
 
 </body>
